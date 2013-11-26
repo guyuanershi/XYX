@@ -1,14 +1,21 @@
 package com.xyx;
 
-import com.xyx.util.SystemUiHider;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.concurrent.ExecutionException;
 
-import android.annotation.TargetApi;
 import android.app.Activity;
-import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
-import android.view.MotionEvent;
 import android.view.View;
+import android.widget.AdapterView;
+import android.widget.AdapterView.OnItemClickListener;
+import android.widget.GridView;
+import android.widget.SimpleAdapter;
+import android.widget.Toast;
+
+import com.xyx.server.hprose.DataFromMyAPI;
+import com.xyx.util.SystemUiHider;
 
 /**
  * An example full-screen activity that shows and hides the system UI (i.e.
@@ -51,67 +58,106 @@ public class MainActivity extends Activity {
 
         setContentView(R.layout.activity_main);
 
-        final View controlsView = findViewById(R.id.fullscreen_content_controls);
-        final View contentView = findViewById(R.id.fullscreen_content);
+        //final View controlsView = findViewById(R.id.fullscreen_content_controls);
+        //final View contentView = findViewById(R.id.fullscreen_content);
+        final GridView contentView = (GridView)findViewById(R.id.astro_main_content);
 
         // Set up an instance of SystemUiHider to control the system UI for
         // this activity.
-        mSystemUiHider = SystemUiHider.getInstance(this, contentView, HIDER_FLAGS);
-        mSystemUiHider.setup();
-        mSystemUiHider
-                .setOnVisibilityChangeListener(new SystemUiHider.OnVisibilityChangeListener() {
-                    // Cached values.
-                    int mControlsHeight;
-                    int mShortAnimTime;
-
-                    @Override
-                    @TargetApi(Build.VERSION_CODES.HONEYCOMB_MR2)
-                    public void onVisibilityChange(boolean visible) {
-                        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.HONEYCOMB_MR2) {
-                            // If the ViewPropertyAnimator API is available
-                            // (Honeycomb MR2 and later), use it to animate the
-                            // in-layout UI controls at the bottom of the
-                            // screen.
-                            if (mControlsHeight == 0) {
-                                mControlsHeight = controlsView.getHeight();
-                            }
-                            if (mShortAnimTime == 0) {
-                                mShortAnimTime = getResources().getInteger(
-                                        android.R.integer.config_shortAnimTime);
-                            }
-                            controlsView.animate()
-                                    .translationY(visible ? 0 : mControlsHeight)
-                                    .setDuration(mShortAnimTime);
-                        } else {
-                            // If the ViewPropertyAnimator APIs aren't
-                            // available, simply show or hide the in-layout UI
-                            // controls.
-                            controlsView.setVisibility(visible ? View.VISIBLE : View.GONE);
-                        }
-
-                        if (visible && AUTO_HIDE) {
-                            // Schedule a hide().
-                            delayedHide(AUTO_HIDE_DELAY_MILLIS);
-                        }
-                    }
-                });
+//        mSystemUiHider = SystemUiHider.getInstance(this, contentView, HIDER_FLAGS);
+//        mSystemUiHider.setup();
+//        mSystemUiHider
+//                .setOnVisibilityChangeListener(new SystemUiHider.OnVisibilityChangeListener() {
+//                    // Cached values.
+//                    int mControlsHeight;
+//                    int mShortAnimTime;
+//
+//                    @Override
+//                    @TargetApi(Build.VERSION_CODES.HONEYCOMB_MR2)
+//                    public void onVisibilityChange(boolean visible) {
+//                        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.HONEYCOMB_MR2) {
+//                            // If the ViewPropertyAnimator API is available
+//                            // (Honeycomb MR2 and later), use it to animate the
+//                            // in-layout UI controls at the bottom of the
+//                            // screen.
+//                            if (mControlsHeight == 0) {
+//                                mControlsHeight = controlsView.getHeight();
+//                            }
+//                            if (mShortAnimTime == 0) {
+//                                mShortAnimTime = getResources().getInteger(
+//                                        android.R.integer.config_shortAnimTime);
+//                            }
+//                            controlsView.animate()
+//                                    .translationY(visible ? 0 : mControlsHeight)
+//                                    .setDuration(mShortAnimTime);
+//                        } else {
+//                            // If the ViewPropertyAnimator APIs aren't
+//                            // available, simply show or hide the in-layout UI
+//                            // controls.
+//                            controlsView.setVisibility(visible ? View.VISIBLE : View.GONE);
+//                        }
+//
+//                        if (visible && AUTO_HIDE) {
+//                            // Schedule a hide().
+//                            delayedHide(AUTO_HIDE_DELAY_MILLIS);
+//                        }
+//                    }
+//                });
 
         // Set up the user interaction to manually show or hide the system UI.
-        contentView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                if (TOGGLE_ON_CLICK) {
-                    mSystemUiHider.toggle();
-                } else {
-                    mSystemUiHider.show();
-                }
-            }
-        });
+//        contentView.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                if (TOGGLE_ON_CLICK) {
+//                    mSystemUiHider.toggle();
+//                } else {
+//                    mSystemUiHider.show();
+//                }
+//            }
+//        });
+        
+        ArrayList<HashMap<String, Object>> ltImgItems = new ArrayList<HashMap<String,Object>>();
+        HashMap<String, Object> item = new HashMap<String, Object>();
+        item.put("ItemImage", R.drawable.ic_launcher);
+        item.put("ItemText", "金牛座");
+        ltImgItems.add(item);
+        
+        SimpleAdapter sadp = new SimpleAdapter(this,
+        		ltImgItems,
+        		R.layout.astro_gridview,
+        		new String[]{"ItemImage", "ItemText"},
+        		new int[] {R.id.itemImage, R.id.itemText});
+        
+        contentView.setAdapter(sadp);
 
+        contentView.setOnItemClickListener(new OnItemClickListener() {
+        	
+        	@Override
+        	public void onItemClick(AdapterView<?> arg0,//The AdapterView where the click happened   
+                    View arg1,//The view within the AdapterView that was clicked  
+                    int arg2,//The position of the view in the adapter  
+                    long arg3//The row id of the item that was clicked  
+                    ) {   
+        				//HashMap<String, Object> item=(HashMap<String, Object>) arg0.getItemAtPosition(arg2);
+        				//Toast.makeText(arg0.getContext(), (String)item.get("ItemText"), Toast.LENGTH_LONG).show();
+        				
+        				DataFromMyAPI ddApi = new DataFromMyAPI();
+        				try {
+        					ArrayList<String> dd = ddApi.execute("MYAPI_astro_day").get();
+							Toast.makeText(arg0.getContext(), dd.toString(), Toast.LENGTH_LONG).show();
+						} catch (InterruptedException e) {
+							// TODO Auto-generated catch block
+							e.printStackTrace();
+						} catch (ExecutionException e) {
+							// TODO Auto-generated catch block
+							e.printStackTrace();
+						}
+        			  }  
+		});
         // Upon interacting with UI controls, delay any scheduled hide()
         // operations to prevent the jarring behavior of controls going away
         // while interacting with the UI.
-        findViewById(R.id.dummy_button).setOnTouchListener(mDelayHideTouchListener);
+        //findViewById(R.id.dummy_button).setOnTouchListener(mDelayHideTouchListener);
     }
 
     @Override
@@ -130,21 +176,21 @@ public class MainActivity extends Activity {
      * system UI. This is to prevent the jarring behavior of controls going away
      * while interacting with activity UI.
      */
-    View.OnTouchListener mDelayHideTouchListener = new View.OnTouchListener() {
-        @Override
-        public boolean onTouch(View view, MotionEvent motionEvent) {
-            if (AUTO_HIDE) {
-                delayedHide(AUTO_HIDE_DELAY_MILLIS);
-            }
-            return false;
-        }
-    };
+//    View.OnTouchListener mDelayHideTouchListener = new View.OnTouchListener() {
+//        @Override
+//        public boolean onTouch(View view, MotionEvent motionEvent) {
+//            if (AUTO_HIDE) {
+//                delayedHide(AUTO_HIDE_DELAY_MILLIS);
+//            }
+//            return false;
+//        }
+//    };
 
     Handler mHideHandler = new Handler();
     Runnable mHideRunnable = new Runnable() {
         @Override
         public void run() {
-            mSystemUiHider.hide();
+            //mSystemUiHider.hide();
         }
     };
 
