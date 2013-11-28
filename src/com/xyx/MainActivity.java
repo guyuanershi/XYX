@@ -15,6 +15,7 @@ import android.widget.SimpleAdapter;
 import android.widget.Toast;
 
 import com.xyx.server.hprose.DataFromMyAPI;
+import com.xyx.util.AstroUtil;
 import com.xyx.util.SystemUiHider;
 
 /**
@@ -117,10 +118,12 @@ public class MainActivity extends Activity {
 //        });
         
         ArrayList<HashMap<String, Object>> ltImgItems = new ArrayList<HashMap<String,Object>>();
-        HashMap<String, Object> item = new HashMap<String, Object>();
-        item.put("ItemImage", R.drawable.ic_launcher);
-        item.put("ItemText", "金牛座");
-        ltImgItems.add(item);
+        for (String astroName : AstroUtil.Astros(getBaseContext())){
+            HashMap<String, Object> item = new HashMap<String, Object>();
+            item.put("ItemImage", R.drawable.ic_launcher);
+            item.put("ItemText", astroName);
+            ltImgItems.add(item);
+        }
         
         SimpleAdapter sadp = new SimpleAdapter(this,
         		ltImgItems,
@@ -143,7 +146,7 @@ public class MainActivity extends Activity {
         				
         				DataFromMyAPI ddApi = new DataFromMyAPI();
         				try {
-        					ArrayList<String> dd = ddApi.execute("MYAPI_astro_day").get();
+        					ArrayList<String> dd = ddApi.execute(String.valueOf(arg2)).get();
 							Toast.makeText(arg0.getContext(), dd.toString(), Toast.LENGTH_LONG).show();
 						} catch (InterruptedException e) {
 							// TODO Auto-generated catch block
