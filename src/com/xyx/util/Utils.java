@@ -13,6 +13,8 @@ public class Utils {
     	return strings;
     }
     
+    
+    
     private static Boolean isConnected;
 
 	public static Boolean getIsConnected() {

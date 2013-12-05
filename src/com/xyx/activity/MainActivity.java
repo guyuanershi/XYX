@@ -19,6 +19,7 @@ import android.widget.SimpleAdapter;
 import android.widget.Toast;
 
 import com.xyx.R;
+import com.xyx.R.color;
 import com.xyx.receiver.ConnectionReceiver;
 import com.xyx.server.hprose.DataFromMyAPI;
 import com.xyx.util.AstroUtil;
@@ -133,11 +134,19 @@ public class MainActivity extends Activity {
 //            }
 //        });
         
+        Class<com.xyx.R.drawable> cls = R.drawable.class;
         ArrayList<HashMap<String, Object>> ltImgItems = new ArrayList<HashMap<String,Object>>();
         for (String astroName : AstroUtil.Astros(getBaseContext())){
             HashMap<String, Object> item = new HashMap<String, Object>();
-            item.put("ItemImage", R.drawable.ic_launcher);
+            //item.put("ItemImage", R.drawable.aquarius);
             item.put("ItemText", astroName);
+            try {
+				int value = cls.getDeclaredField(astroName.toLowerCase()).getInt(null);
+				item.put("ItemImage", value);
+			} catch (Exception e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
             ltImgItems.add(item);
         }
         
