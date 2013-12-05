@@ -12,4 +12,14 @@ public class Utils {
     	arrayList.toArray(strings);
     	return strings;
     }
+    
+    private static Boolean isConnected;
+
+	public static Boolean getIsConnected() {
+		return isConnected;
+	}
+
+	public static void setIsConnected(Boolean isConnected) {
+		Utils.isConnected = isConnected;
+	}
 }

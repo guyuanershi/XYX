@@ -9,5 +9,6 @@
     <string name="title_activity_astro_details">AstroDetailsActivity</string>
     <string name="action_settings">Settings</string>
     <string name="hello_world">Hello world!</string>
+    <string name="no_connection">没有网络</string>
 
 </resources>
