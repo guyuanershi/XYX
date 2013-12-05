@@ -1,5 +1,7 @@
 package com.xyx;
 
+import java.util.List;
+
 import com.xyx.util.Utils;
 
 import android.os.Bundle;
@@ -21,7 +23,11 @@ public class AstroDetailsActivity extends Activity {
 		Intent intent = getIntent();
 		String[] data = intent.getStringArrayExtra(Utils.EXTRA_ASTRO_DATA);
 		TextView tv = (TextView)findViewById(R.id.astroDetails);
-		tv.setText(data.toString());
+		StringBuilder sb = new StringBuilder();
+		for (String s : data){
+			sb.append(s + "\n");
+		}
+		tv.setText(sb.toString());
 	}
 
 	@Override
