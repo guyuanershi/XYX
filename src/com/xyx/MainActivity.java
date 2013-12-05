@@ -5,6 +5,7 @@ import java.util.HashMap;
 import java.util.concurrent.ExecutionException;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.view.View;
@@ -12,11 +13,11 @@ import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.GridView;
 import android.widget.SimpleAdapter;
-import android.widget.Toast;
 
 import com.xyx.server.hprose.DataFromMyAPI;
 import com.xyx.util.AstroUtil;
 import com.xyx.util.SystemUiHider;
+import com.xyx.util.Utils;
 
 /**
  * An example full-screen activity that shows and hides the system UI (i.e.
@@ -52,6 +53,7 @@ public class MainActivity extends Activity {
      * The instance of the {@link SystemUiHider} for this activity.
      */
     private SystemUiHider mSystemUiHider;
+    
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -147,7 +149,11 @@ public class MainActivity extends Activity {
         				DataFromMyAPI ddApi = new DataFromMyAPI();
         				try {
         					ArrayList<String> dd = ddApi.execute(String.valueOf(arg2)).get();
-							Toast.makeText(arg0.getContext(), dd.toString(), Toast.LENGTH_LONG).show();
+							//Toast.makeText(arg0.getContext(), dd.toString(), Toast.LENGTH_LONG).show();
+        					
+        					Intent intent = new Intent(arg0.getContext(), AstroDetailsActivity.class);
+        					intent.putExtra(Utils.EXTRA_ASTRO_DATA, Utils.trans(dd));
+        					startActivity(intent);
 						} catch (InterruptedException e) {
 							// TODO Auto-generated catch block
 							e.printStackTrace();
@@ -155,7 +161,7 @@ public class MainActivity extends Activity {
 							// TODO Auto-generated catch block
 							e.printStackTrace();
 						}
-        			  }  
+        			  }
 		});
         // Upon interacting with UI controls, delay any scheduled hide()
         // operations to prevent the jarring behavior of controls going away
