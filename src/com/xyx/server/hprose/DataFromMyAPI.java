@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 
 import android.os.AsyncTask;
+import android.util.Log;
 
 import hprose.client.HproseHttpClient;
 
@@ -21,8 +22,13 @@ public class DataFromMyAPI extends AsyncTask<String, Void, ArrayList<String>>{
 			idata = (IData)_client.useService(IData.class);
 		}
 		if (_client != null){
+			try {
+				data = idata.MYAPI_astro_day(Integer.valueOf(arg0[0]), "UTF-8");
+			} catch (Exception e) {
+				Log.e("e", e.getMessage());
+			}
 			//data = (ArrayList<String>)_client.invoke(arg0[0], new Object[] {8, "UTF-8"});
-			data = idata.MYAPI_astro_day(Integer.valueOf(arg0[0]), "UTF-8");
+			
 		}
 		return data;
 	}
