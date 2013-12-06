@@ -5,6 +5,7 @@ import java.util.ArrayList;
 
 import android.os.AsyncTask;
 import android.util.Log;
+import android.widget.Toast;
 
 import hprose.client.HproseHttpClient;
 
@@ -25,16 +26,30 @@ public class DataFromMyAPI extends AsyncTask<String, Void, ArrayList<String>>{
 			try {
 				data = idata.MYAPI_astro_day(Integer.valueOf(arg0[0]), "UTF-8");
 			} catch (Exception e) {
-				Log.e("e", e.getMessage());
+				Log.v("wifi is really connected?", "nothing");
 			}
 			//data = (ArrayList<String>)_client.invoke(arg0[0], new Object[] {8, "UTF-8"});
 			
 		}
+		
 		return data;
 	}
+	
+	
 
 	//private static final DataFromMyAPI Default = new DataFromMyAPI();
 	
+	@Override
+	protected void onPostExecute(ArrayList<String> result) {
+		
+		cancel(true);
+		
+		super.onPostExecute(result);
+		
+	}
+
+
+
 	private HproseHttpClient _client;
 	
 		

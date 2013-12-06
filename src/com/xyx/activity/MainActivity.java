@@ -158,7 +158,10 @@ public class MainActivity extends Activity {
         
         contentView.setAdapter(sadp);
 
+        
         contentView.setOnItemClickListener(new OnItemClickListener() {
+        	
+        	
         	
         	@Override
         	public void onItemClick(AdapterView<?> arg0,//The AdapterView where the click happened   
@@ -170,19 +173,19 @@ public class MainActivity extends Activity {
         				//Toast.makeText(arg0.getContext(), (String)item.get("ItemText"), Toast.LENGTH_LONG).show();
         				Context context = arg0.getContext();
         				if (Utils.getIsConnected()){
-	        				DataFromMyAPI ddApi = new DataFromMyAPI();
-	        				try {
-	        					ArrayList<String> dd = ddApi.execute(String.valueOf(arg2)).get();
+	        				
+//	        					DataFromMyAPI ddApi = new DataFromMyAPI();
+//	        					ArrayList<String> dd = ddApi.execute(String.valueOf(arg2)).get();
+//	        					if (dd != null){
+//	        						Intent intent = new Intent(context, AstroDetailsActivity.class);
+//		        					intent.putExtra(Utils.EXTRA_ASTRO_DATA, Utils.trans(dd));
+//		        					startActivity(intent);	
+//	        					}
+//	        					ddApi.cancel(true);
 	        					Intent intent = new Intent(context, AstroDetailsActivity.class);
-	        					intent.putExtra(Utils.EXTRA_ASTRO_DATA, Utils.trans(dd));
-	        					startActivity(intent);
-							} catch (InterruptedException e) {
-								// TODO Auto-generated catch block
-								e.printStackTrace();
-							} catch (ExecutionException e) {
-								// TODO Auto-generated catch block
-								e.printStackTrace();
-							}
+	        					intent.putExtra(Utils.EXTRA_ASTRO_DATA, arg2);
+	        					startActivity(intent);	
+							 
 	        			} else {
 	        				Toast.makeText(context, context.getString(R.string.no_connection), Toast.LENGTH_SHORT).show();
 	        			}
