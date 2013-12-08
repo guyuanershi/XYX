@@ -1,15 +1,19 @@
 package com.xyx.server.hprose;
 
-import java.io.IOException;
+import hprose.client.HproseHttpClient;
+
 import java.util.ArrayList;
 
 import android.os.AsyncTask;
 import android.util.Log;
-import android.widget.Toast;
 
-import hprose.client.HproseHttpClient;
+import com.xyx.interfaces.IDataFromMyAPI;
 
 public class DataFromMyAPI extends AsyncTask<String, Void, ArrayList<String>>{
+	
+	public DataFromMyAPI(IDataFromMyAPI event){
+		_event = event;
+	}
 	
 	@Override
 	protected ArrayList<String> doInBackground(String... arg0) {
@@ -42,18 +46,22 @@ public class DataFromMyAPI extends AsyncTask<String, Void, ArrayList<String>>{
 	@Override
 	protected void onPostExecute(ArrayList<String> result) {
 		
-		cancel(true);
+		if (_event != null){
+			_event.updateUI(result);
+		}
 		
 		super.onPostExecute(result);
 		
 	}
 
-
-
+	//
+	private IDataFromMyAPI _event;
 	private HproseHttpClient _client;
 	
 		
 	interface IData {
 		ArrayList<String> MYAPI_astro_day(int id, String chartSet);
 	}
+	
+	
 }
