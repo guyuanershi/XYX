@@ -51,11 +51,32 @@ public class AstroDetailsActivity extends Activity {
 				return;
 			
 			TextView tv = (TextView)findViewById(R.id.astroDetails);
-			StringBuilder sb = new StringBuilder();
+			tv.setText(processRawData(data));
+		}
+		
+		
+		private String processRawData(ArrayList<String> data)
+		{
+			String sb = "";
 			for (String s : data){
-				sb.append(s + "\n");
+				
+				s = s.replaceAll("\\{|\\}", "");
+				String[] ss = s.split("title=");
+
+				if(ss.length == 2)
+				{
+					String s2 = ss[0].replaceAll("value=", "      ").replaceAll(", rank=0,|, rank=", "");
+					sb = ss[1] + s2 +  "\n" + sb;
+				}
+				else
+				{
+					
+					sb= ss[0] + "\n" + sb;
+				}
+
 			}
-			tv.setText(sb.toString());
+			
+			return sb;
 		}
 		
 	}
