@@ -9,7 +9,7 @@ import android.view.Menu;
 import android.widget.TextView;
 
 import com.xyx.R;
-import com.xyx.interfaces.IDataFromMyAPI;
+import com.xyx.interfaces.IDataFromMyAPIEvent;
 import com.xyx.server.hprose.DataFromMyAPI;
 import com.xyx.util.Utils;
 
@@ -37,7 +37,7 @@ public class AstroDetailsActivity extends Activity {
 	
 	
 	
-	class DataFormAPIEvent implements IDataFromMyAPI {
+	class DataFormAPIEvent implements IDataFromMyAPIEvent {
 
 		@Override
 		public void loadData() {

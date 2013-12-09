@@ -169,22 +169,11 @@ public class MainActivity extends Activity {
                     int arg2,//The position of the view in the adapter  
                     long arg3//The row id of the item that was clicked  
                     ) {   
-        				//HashMap<String, Object> item=(HashMap<String, Object>) arg0.getItemAtPosition(arg2);
-        				//Toast.makeText(arg0.getContext(), (String)item.get("ItemText"), Toast.LENGTH_LONG).show();
         				Context context = arg0.getContext();
         				if (Utils.getIsConnected()){
-	        				
-//	        					DataFromMyAPI ddApi = new DataFromMyAPI();
-//	        					ArrayList<String> dd = ddApi.execute(String.valueOf(arg2)).get();
-//	        					if (dd != null){
-//	        						Intent intent = new Intent(context, AstroDetailsActivity.class);
-//		        					intent.putExtra(Utils.EXTRA_ASTRO_DATA, Utils.trans(dd));
-//		        					startActivity(intent);	
-//	        					}
-//	        					ddApi.cancel(true);
-	        					Intent intent = new Intent(context, AstroDetailsActivity.class);
-	        					intent.putExtra(Utils.EXTRA_ASTRO_DATA, arg2);
-	        					startActivity(intent);	
+        					Intent intent = new Intent(context, AstroDetailsActivity.class);
+        					intent.putExtra(Utils.EXTRA_ASTRO_DATA, arg2);
+        					startActivity(intent);	
 							 
 	        			} else {
 	        				Toast.makeText(context, context.getString(R.string.no_connection), Toast.LENGTH_SHORT).show();

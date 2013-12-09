@@ -7,11 +7,11 @@ import java.util.ArrayList;
 import android.os.AsyncTask;
 import android.util.Log;
 
-import com.xyx.interfaces.IDataFromMyAPI;
+import com.xyx.interfaces.IDataFromMyAPIEvent;
 
 public class DataFromMyAPI extends AsyncTask<String, Void, ArrayList<String>>{
 	
-	public DataFromMyAPI(IDataFromMyAPI event){
+	public DataFromMyAPI(IDataFromMyAPIEvent event){
 		_event = event;
 	}
 	
@@ -55,7 +55,7 @@ public class DataFromMyAPI extends AsyncTask<String, Void, ArrayList<String>>{
 	}
 
 	//
-	private IDataFromMyAPI _event;
+	private IDataFromMyAPIEvent _event;
 	private HproseHttpClient _client;
 	
 		
