@@ -20,6 +20,7 @@ import android.widget.Toast;
 
 import com.xyx.R;
 import com.xyx.R.color;
+import com.xyx.enums.GetTypeOfAstro;
 import com.xyx.receiver.ConnectionReceiver;
 import com.xyx.server.hprose.DataFromMyAPI;
 import com.xyx.util.AstroUtil;
@@ -171,10 +172,27 @@ public class MainActivity extends Activity {
                     ) {   
         				Context context = arg0.getContext();
         				if (Utils.getIsConnected()){
-        					Intent intent = new Intent(context, AstroDetailsActivity.class);
-        					intent.putExtra(Utils.EXTRA_ASTRO_DATA, arg2);
-        					startActivity(intent);	
-							 
+        					
+        					GetTypeOfAstro getTypeOfAstro = GetTypeOfAstro.TODAY;
+        					Intent intent = null;
+        					switch (getTypeOfAstro) {
+							case TODAY:
+							case TOMORROW:
+	        					intent = new Intent(context, AstroDetailsActivity.class);
+								break;
+							case WEEK:
+							case MOUNTH:
+							case YEAR:
+								intent = new Intent(context, AstroDetailsMoreActivity.class);
+							default:
+								break;
+							}
+        					
+        					if (intent != null) {
+            					intent.putExtra(Utils.EXTRA_ASTRO_DATA, arg2);
+            					intent.putExtra(Utils.EXTRA_GET_TYPE_OF_ASTRO, getTypeOfAstro.name());
+            					startActivity(intent);
+        					}
 	        			} else {
 	        				Toast.makeText(context, context.getString(R.string.no_connection), Toast.LENGTH_SHORT).show();
 	        			}

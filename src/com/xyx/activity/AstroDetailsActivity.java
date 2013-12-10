@@ -9,6 +9,7 @@ import android.view.Menu;
 import android.widget.TextView;
 
 import com.xyx.R;
+import com.xyx.enums.GetTypeOfAstro;
 import com.xyx.interfaces.IDataFromMyAPIEvent;
 import com.xyx.server.hprose.DataFromMyAPI;
 import com.xyx.util.Utils;
@@ -24,8 +25,10 @@ public class AstroDetailsActivity extends Activity {
 		
 		Intent intent = getIntent();
 		Integer index = intent.getExtras().getInt(Utils.EXTRA_ASTRO_DATA);
+		String gettype = intent.getExtras().getString(Utils.EXTRA_GET_TYPE_OF_ASTRO);
+//		GetTypeOfAstro typeOfAstro = GetTypeOfAstro.valueOf(gettype);
 		DataFromMyAPI api = new DataFromMyAPI(new DataFormAPIEvent());
-		api.execute(String.valueOf(index));			
+		api.execute(String.valueOf(index), gettype);			
 	}
 
 	@Override
