@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="getTypeAstro">
+        <item>每日运势</item>
+        <item>明日运势</item>
+        <item>每周运势</item>
+        <item>每月运势</item>
+        <item>年度运势</item>
+    </string-array>
+</resources>

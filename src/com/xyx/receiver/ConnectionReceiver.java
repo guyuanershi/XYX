@@ -23,7 +23,7 @@ public class ConnectionReceiver extends BroadcastReceiver {
 		if (netInfo.getType() == ConnectivityManager.TYPE_WIFI){
 			WifiManager wifiManager = (WifiManager)context.getSystemService(Context.WIFI_SERVICE);
 			WifiInfo info = wifiManager.getConnectionInfo();
-			SupplicantState supstate = info.getSupplicantState();
+			//TODO: wifi access need password(like in office)
 		}
 		if (netInfo != null && netInfo.getState() == State.CONNECTED) {
 			Utils.setIsConnected(true);

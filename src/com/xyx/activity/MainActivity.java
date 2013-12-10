@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.concurrent.ExecutionException;
 
+import android.R.anim;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
@@ -14,8 +15,11 @@ import android.os.Handler;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
+import android.widget.AdapterView.OnItemSelectedListener;
+import android.widget.ArrayAdapter;
 import android.widget.GridView;
 import android.widget.SimpleAdapter;
+import android.widget.Spinner;
 import android.widget.Toast;
 
 import com.xyx.R;
@@ -63,6 +67,8 @@ public class MainActivity extends Activity {
     private SystemUiHider mSystemUiHider;
     
     private ConnectionReceiver _connectionReceiver;
+    
+    private GetTypeOfAstro _getGetTypeOfAstro = GetTypeOfAstro.TODAY;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -80,7 +86,13 @@ public class MainActivity extends Activity {
         //final View controlsView = findViewById(R.id.fullscreen_content_controls);
         //final View contentView = findViewById(R.id.fullscreen_content);
         final GridView contentView = (GridView)findViewById(R.id.astro_main_content);
-
+        final Spinner spinner = (Spinner)findViewById(R.id.get_type_astro);
+        
+        ArrayAdapter adapter = ArrayAdapter.createFromResource(this, R.array.getTypeAstro, android.R.layout.simple_spinner_item);
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        spinner.setAdapter(adapter);
+        spinner.setOnItemSelectedListener(new SpinnerXMLSelectedListener());
+        
         // Set up an instance of SystemUiHider to control the system UI for
         // this activity.
 //        mSystemUiHider = SystemUiHider.getInstance(this, contentView, HIDER_FLAGS);
@@ -173,9 +185,9 @@ public class MainActivity extends Activity {
         				Context context = arg0.getContext();
         				if (Utils.getIsConnected()){
         					
-        					GetTypeOfAstro getTypeOfAstro = GetTypeOfAstro.TODAY;
+        					//GetTypeOfAstro getTypeOfAstro = GetTypeOfAstro.TODAY;
         					Intent intent = null;
-        					switch (getTypeOfAstro) {
+        					switch (_getGetTypeOfAstro) {
 							case TODAY:
 							case TOMORROW:
 	        					intent = new Intent(context, AstroDetailsActivity.class);
@@ -190,7 +202,7 @@ public class MainActivity extends Activity {
         					
         					if (intent != null) {
             					intent.putExtra(Utils.EXTRA_ASTRO_DATA, arg2);
-            					intent.putExtra(Utils.EXTRA_GET_TYPE_OF_ASTRO, getTypeOfAstro.name());
+            					intent.putExtra(Utils.EXTRA_GET_TYPE_OF_ASTRO, _getGetTypeOfAstro.name());
             					startActivity(intent);
         					}
 	        			} else {
@@ -255,5 +267,20 @@ public class MainActivity extends Activity {
 		super.onDestroy();
 	}
     
+	private class SpinnerXMLSelectedListener implements OnItemSelectedListener {
+
+		@Override
+		public void onItemSelected(AdapterView<?> arg0, View arg1, int arg2,
+				long arg3) {
+			_getGetTypeOfAstro = GetTypeOfAstro.values()[arg2];
+		}
+
+		@Override
+		public void onNothingSelected(AdapterView<?> arg0) {
+			// TODO Auto-generated method stub
+			
+		}
+		
+	}
     
 }
