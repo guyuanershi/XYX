@@ -62,10 +62,8 @@ public class AstroDetailsActivity extends Activity {
 		{
 			String sb = "";
 			for (String s : data){
-				
 				s = s.replaceAll("\\{|\\}", "");
 				String[] ss = s.split("title=");
-
 				if(ss.length == 2)
 				{
 					String s2 = ss[0].replaceAll("value=", "      ").replaceAll(", rank=0,|, rank=", "");
@@ -73,12 +71,9 @@ public class AstroDetailsActivity extends Activity {
 				}
 				else
 				{
-					
 					sb= ss[0] + "\n" + sb;
 				}
-
 			}
-			
 			return sb;
 		}
 		
