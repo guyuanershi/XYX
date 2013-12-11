@@ -32,8 +32,48 @@ public class AstroDetailsActivity extends Activity {
 				if (data == null)
 					return;
 				
-				TextView tv = (TextView)findViewById(R.id.astroDetails);
-				tv.setText(Utils.processRawData(data));
+				TextView tvSummary = (TextView)findViewById(R.id.summary);
+				TextView tvSummaryVal = (TextView)findViewById(R.id.summary_val);
+				String strVal = Utils.processRawData(data,tvSummary.getText().toString());
+				tvSummaryVal.setText(strVal);
+				
+				TextView tvLove = (TextView)findViewById(R.id.love);
+				TextView tvLoveVal = (TextView)findViewById(R.id.love_val);
+				tvLoveVal.setText(Utils.processRawData(data,tvLove.getText().toString()));
+				
+				TextView tvWork = (TextView)findViewById(R.id.work);
+				TextView tvWorkVal = (TextView)findViewById(R.id.work_val);
+				tvWorkVal.setText(Utils.processRawData(data,tvWork.getText().toString()));
+				
+				TextView tvMoney = (TextView)findViewById(R.id.money);
+				TextView tvMoneyVal = (TextView)findViewById(R.id.money_val);
+				tvMoneyVal.setText(Utils.processRawData(data,tvMoney.getText().toString()));
+				
+				TextView tvHealth = (TextView)findViewById(R.id.health);
+				TextView tvHealthVal = (TextView)findViewById(R.id.health_val);
+				tvHealthVal.setText(Utils.processRawData(data,tvHealth.getText().toString()));
+				
+				TextView tvBusiness = (TextView)findViewById(R.id.business);
+				TextView tvBusinessVal = (TextView)findViewById(R.id.business_val);
+				tvBusinessVal.setText(Utils.processRawData(data,tvBusiness.getText().toString()));
+				
+				TextView tvLuckyColor = (TextView)findViewById(R.id.lucky_color);
+				TextView tvLuckyColorVal = (TextView)findViewById(R.id.lucky_color_val);
+				tvLuckyColorVal.setText(Utils.processRawData(data,tvLuckyColor.getText().toString()));
+				
+				TextView tvLuckyNum = (TextView)findViewById(R.id.lucky_num);
+				TextView tvLuckyNumVal = (TextView)findViewById(R.id.lucky_num_val);
+				tvLuckyNumVal.setText(Utils.processRawData(data,tvLuckyNum.getText().toString()));
+				
+				TextView tvFitAstro = (TextView)findViewById(R.id.fit_astro);
+				TextView tvFitAstroVal = (TextView)findViewById(R.id.fit_astro_val);
+				tvFitAstroVal.setText(Utils.processRawData(data,tvFitAstro.getText().toString()));
+				
+				TextView tvSummaryText = (TextView)findViewById(R.id.summary_text);
+				TextView tvSummaryTextVal = (TextView)findViewById(R.id.summary_text_val);
+				strVal = Utils.processRawData(data,tvSummaryText.getText().toString());
+				tvSummaryTextVal.setText(strVal);
+			
 			}
 		});
 		api.execute(String.valueOf(index), gettype);			
@@ -45,101 +85,4 @@ public class AstroDetailsActivity extends Activity {
 		getMenuInflater().inflate(R.menu.astro_details, menu);
 		return true;
 	}
-	
-	
-	
-<<<<<<< HEAD
-	class DataFormAPIEvent implements IDataFromMyAPIEvent {
-
-		@Override
-		public void loadData() {
-			// TODO Auto-generated method stub
-			
-		}
-
-		@Override
-		public void updateUI(ArrayList<String> data) {
-			if (data == null)
-				return;
-			
-			TextView tvSummary = (TextView)findViewById(R.id.summary);
-			TextView tvSummaryVal = (TextView)findViewById(R.id.summary_val);
-			String strVal = processRawData(data,tvSummary.getText().toString());
-			tvSummaryVal.setText(strVal);
-			
-			TextView tvLove = (TextView)findViewById(R.id.love);
-			TextView tvLoveVal = (TextView)findViewById(R.id.love_val);
-			tvLoveVal.setText(processRawData(data,tvLove.getText().toString()));
-			
-			TextView tvWork = (TextView)findViewById(R.id.work);
-			TextView tvWorkVal = (TextView)findViewById(R.id.work_val);
-			tvWorkVal.setText(processRawData(data,tvWork.getText().toString()));
-			
-			TextView tvMoney = (TextView)findViewById(R.id.money);
-			TextView tvMoneyVal = (TextView)findViewById(R.id.money_val);
-			tvMoneyVal.setText(processRawData(data,tvMoney.getText().toString()));
-			
-			TextView tvHealth = (TextView)findViewById(R.id.health);
-			TextView tvHealthVal = (TextView)findViewById(R.id.health_val);
-			tvHealthVal.setText(processRawData(data,tvHealth.getText().toString()));
-			
-			TextView tvBusiness = (TextView)findViewById(R.id.business);
-			TextView tvBusinessVal = (TextView)findViewById(R.id.business_val);
-			tvBusinessVal.setText(processRawData(data,tvBusiness.getText().toString()));
-			
-			TextView tvLuckyColor = (TextView)findViewById(R.id.lucky_color);
-			TextView tvLuckyColorVal = (TextView)findViewById(R.id.lucky_color_val);
-			tvLuckyColorVal.setText(processRawData(data,tvLuckyColor.getText().toString()));
-			
-			TextView tvLuckyNum = (TextView)findViewById(R.id.lucky_num);
-			TextView tvLuckyNumVal = (TextView)findViewById(R.id.lucky_num_val);
-			tvLuckyNumVal.setText(processRawData(data,tvLuckyNum.getText().toString()));
-			
-			TextView tvFitAstro = (TextView)findViewById(R.id.fit_astro);
-			TextView tvFitAstroVal = (TextView)findViewById(R.id.fit_astro_val);
-			tvFitAstroVal.setText(processRawData(data,tvFitAstro.getText().toString()));
-			
-			TextView tvSummaryText = (TextView)findViewById(R.id.summary_text);
-			TextView tvSummaryTextVal = (TextView)findViewById(R.id.summary_text_val);
-			strVal = processRawData(data,tvSummaryText.getText().toString());
-			tvSummaryTextVal.setText(strVal);
-		}
-		
-		
-		private String processRawData(ArrayList<String> rawData, String dataType)
-		{
-			String sb = "";
-			for (String s : rawData){
-				s = s.replaceAll("\\{|\\}", "");
-				String[] ss = s.split("title=");
-				if(ss.length == 2)
-				{
-					String s2 = ss[0].replaceAll("value=", "      ").replaceAll(", rank=0,|, rank=", "");
-					if(ss[1].equals(dataType))
-					{
-						sb = s2.trim();
-						break;
-					}
-					//sb = ss[1] + s2 +  "\n" + sb;
-				}
-				else
-				{
-					sb= ss[0] + "\n" + sb;
-				}
-			}
-			return sb;
-		}
-		
-		private String getData(String dataType)
-		{
-			String strval = "";
-			
-			return strval;
-		}
-		
-	}
-=======
-	
->>>>>>> upstream/master
-
 }
