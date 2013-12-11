@@ -25,7 +25,17 @@ public class AstroDetailsActivity extends Activity {
 		Intent intent = getIntent();
 		Integer index = intent.getExtras().getInt(Utils.EXTRA_ASTRO_DATA);
 		String gettype = intent.getExtras().getString(Utils.EXTRA_GET_TYPE_OF_ASTRO);
-		DataFromMyAPI api = new DataFromMyAPI(new DataFormAPIEvent());
+		DataFromMyAPI api = new DataFromMyAPI(new IDataFromMyAPIEvent() {
+			
+			@Override
+			public void updateUI(ArrayList<String> data) {
+				if (data == null)
+					return;
+				
+				TextView tv = (TextView)findViewById(R.id.astroDetails);
+				tv.setText(Utils.processRawData(data));
+			}
+		});
 		api.execute(String.valueOf(index), gettype);			
 	}
 
@@ -38,43 +48,6 @@ public class AstroDetailsActivity extends Activity {
 	
 	
 	
-	class DataFormAPIEvent implements IDataFromMyAPIEvent {
-
-		@Override
-		public void loadData() {
-			// TODO Auto-generated method stub
-			
-		}
-
-		@Override
-		public void updateUI(ArrayList<String> data) {
-			if (data == null)
-				return;
-			
-			TextView tv = (TextView)findViewById(R.id.astroDetails);
-			tv.setText(processRawData(data));
-		}
-		
-		
-		private String processRawData(ArrayList<String> data)
-		{
-			String sb = "";
-			for (String s : data){
-				s = s.replaceAll("\\{|\\}", "");
-				String[] ss = s.split("title=");
-				if(ss.length == 2)
-				{
-					String s2 = ss[0].replaceAll("value=", "      ").replaceAll(", rank=0,|, rank=", "");
-					sb = ss[1] + s2 +  "\n" + sb;
-				}
-				else
-				{
-					sb= ss[0] + "\n" + sb;
-				}
-			}
-			return sb;
-		}
-		
-	}
+	
 
 }

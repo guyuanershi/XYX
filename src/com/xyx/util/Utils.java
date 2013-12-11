@@ -14,6 +14,24 @@ public class Utils {
     	return strings;
     }
     
+	public static String processRawData(ArrayList<String> data)
+	{
+		String sb = "";
+		for (String s : data){
+			s = s.replaceAll("\\{|\\}", "");
+			String[] ss = s.split("title=");
+			if(ss.length == 2)
+			{
+				String s2 = ss[0].replaceAll("value=", "      ").replaceAll(", rank=0,|, rank=", "");
+				sb = ss[1] + s2 +  "\n" + sb;
+			}
+			else
+			{
+				sb= ss[0] + "\n" + sb;
+			}
+		}
+		return sb;
+	}
     
     
     private static Boolean isConnected;
