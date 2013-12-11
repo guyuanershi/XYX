@@ -14,16 +14,21 @@ public class Utils {
     	return strings;
     }
     
-	public static String processRawData(ArrayList<String> data)
+	public static String processRawData(ArrayList<String> rawData, String dataType)
 	{
 		String sb = "";
-		for (String s : data){
+		for (String s : rawData){
 			s = s.replaceAll("\\{|\\}", "");
 			String[] ss = s.split("title=");
 			if(ss.length == 2)
 			{
 				String s2 = ss[0].replaceAll("value=", "      ").replaceAll(", rank=0,|, rank=", "");
-				sb = ss[1] + s2 +  "\n" + sb;
+				if(ss[1].equals(dataType))
+				{
+					sb = s2.trim();
+					break;
+				}
+				//sb = ss[1] + s2 +  "\n" + sb;
 			}
 			else
 			{
