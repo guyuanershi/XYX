@@ -3,9 +3,11 @@ package com.xyx.activity;
 import java.util.ArrayList;
 
 import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
+import android.widget.RatingBar;
 import android.widget.TextView;
 
 import com.xyx.R;
@@ -21,7 +23,8 @@ public class AstroDetailsActivity extends Activity {
 		
 		//show activity
 		setContentView(R.layout.activity_astro_details);
-		
+
+		final Activity activity = this;
 		Intent intent = getIntent();
 		Integer index = intent.getExtras().getInt(Utils.EXTRA_ASTRO_DATA);
 		String gettype = intent.getExtras().getString(Utils.EXTRA_GET_TYPE_OF_ASTRO);
@@ -32,22 +35,28 @@ public class AstroDetailsActivity extends Activity {
 				if (data == null)
 					return;
 				
+				String strVal = Utils.processRawData(data,"");
+				activity.setTitle(strVal);
+				
 				TextView tvSummary = (TextView)findViewById(R.id.summary);
-				TextView tvSummaryVal = (TextView)findViewById(R.id.summary_val);
-				String strVal = Utils.processRawData(data,tvSummary.getText().toString());
-				tvSummaryVal.setText(strVal);
+				RatingBar rb = (RatingBar)findViewById(R.id.ratingbarSummary);
+				strVal = Utils.processRawData(data,tvSummary.getText().toString());
+				rb.setRating(Integer.parseInt(strVal));
 				
 				TextView tvLove = (TextView)findViewById(R.id.love);
-				TextView tvLoveVal = (TextView)findViewById(R.id.love_val);
-				tvLoveVal.setText(Utils.processRawData(data,tvLove.getText().toString()));
+				RatingBar rbLove = (RatingBar)findViewById(R.id.ratingbarLove);
+				strVal = Utils.processRawData(data,tvLove.getText().toString());
+				rbLove.setRating(Integer.parseInt(strVal));
 				
 				TextView tvWork = (TextView)findViewById(R.id.work);
-				TextView tvWorkVal = (TextView)findViewById(R.id.work_val);
-				tvWorkVal.setText(Utils.processRawData(data,tvWork.getText().toString()));
+				RatingBar rbWork = (RatingBar)findViewById(R.id.ratingbarWork);
+				strVal = Utils.processRawData(data,tvWork.getText().toString());
+				rbWork.setRating(Integer.parseInt(strVal));
 				
 				TextView tvMoney = (TextView)findViewById(R.id.money);
-				TextView tvMoneyVal = (TextView)findViewById(R.id.money_val);
-				tvMoneyVal.setText(Utils.processRawData(data,tvMoney.getText().toString()));
+				RatingBar rbMoney = (RatingBar)findViewById(R.id.ratingbarMoney);
+				strVal = Utils.processRawData(data,tvMoney.getText().toString());
+				rbMoney.setRating(Integer.parseInt(strVal));
 				
 				TextView tvHealth = (TextView)findViewById(R.id.health);
 				TextView tvHealthVal = (TextView)findViewById(R.id.health_val);

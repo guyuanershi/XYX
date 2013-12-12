@@ -17,22 +17,30 @@ public class Utils {
 	public static String processRawData(ArrayList<String> rawData, String dataType)
 	{
 		String sb = "";
+		
 		for (String s : rawData){
 			s = s.replaceAll("\\{|\\}", "");
 			String[] ss = s.split("title=");
 			if(ss.length == 2)
 			{
-				String s2 = ss[0].replaceAll("value=", "      ").replaceAll(", rank=0,|, rank=", "");
+				String s2 = ss[0].replaceAll("value=", "").replaceAll(", rank=0,|, rank=", "");
 				if(ss[1].equals(dataType))
 				{
 					sb = s2.trim();
+					if(sb.endsWith(","))
+						sb = sb.substring(0, sb.length()-1);
 					break;
 				}
-				//sb = ss[1] + s2 +  "\n" + sb;
 			}
 			else
 			{
-				sb= ss[0] + "\n" + sb;
+				if(dataType.equals("") && s.startsWith("cn="))
+				{
+					int start = s.indexOf("=");
+					int end = s.indexOf(",");
+					
+					sb = s.substring(start+1, end-1);
+				}
 			}
 		}
 		return sb;
