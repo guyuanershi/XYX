@@ -184,27 +184,10 @@ public class MainActivity extends Activity {
                     ) {   
         				Context context = arg0.getContext();
         				if (Utils.getIsConnected()){
-        					
-        					//GetTypeOfAstro getTypeOfAstro = GetTypeOfAstro.TODAY;
-        					Intent intent = null;
-        					switch (_getGetTypeOfAstro) {
-							case TODAY:
-							case TOMORROW:
-	        					intent = new Intent(context, AstroDetailsActivity.class);
-								break;
-							case WEEK:
-							case MOUNTH:
-							case YEAR:
-								intent = new Intent(context, AstroDetailsMoreActivity.class);
-							default:
-								break;
-							}
-        					
-        					if (intent != null) {
-            					intent.putExtra(Utils.EXTRA_ASTRO_DATA, arg2);
-            					intent.putExtra(Utils.EXTRA_GET_TYPE_OF_ASTRO, _getGetTypeOfAstro.name());
-            					startActivity(intent);
-        					}
+        					Intent intent = new Intent(context, AstroDetailsViewPager.class);
+            				intent.putExtra(Utils.EXTRA_ASTRO_DATA, arg2);
+            				intent.putExtra(Utils.EXTRA_GET_TYPE_OF_ASTRO, _getGetTypeOfAstro.name());
+            				startActivity(intent);
 	        			} else {
 	        				Toast.makeText(context, context.getString(R.string.no_connection), Toast.LENGTH_SHORT).show();
 	        			}

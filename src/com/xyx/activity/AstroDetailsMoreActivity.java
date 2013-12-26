@@ -24,16 +24,16 @@ public class AstroDetailsMoreActivity extends Activity {
 		Integer index = intent.getExtras().getInt(Utils.EXTRA_ASTRO_DATA);
 		String gettype = intent.getExtras().getString(Utils.EXTRA_GET_TYPE_OF_ASTRO);
 		
-		DataFromMyAPI api = new DataFromMyAPI(new IDataFromMyAPIEvent() {
-			
-			@Override
-			public void updateUI(ArrayList<String> data) {
-				TableLayout tableLayout = (TableLayout)findViewById(R.id.astroMoreDetails);
-				
-			}
-		});
+//		DataFromMyAPI api = new DataFromMyAPI(new IDataFromMyAPIEvent() {
+//			
+//			@Override
+//			public void updateUI(ArrayList<String> data) {
+//				TableLayout tableLayout = (TableLayout)findViewById(R.id.astroMoreDetails);
+//				
+//			}
+//		});
 		
-		api.execute(String.valueOf(index), gettype);	
+//		api.execute(String.valueOf(index), gettype);	
 	}
 
 	@Override

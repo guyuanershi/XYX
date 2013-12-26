@@ -5,7 +5,11 @@ import java.util.ArrayList;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.v4.view.MotionEventCompat;
+import android.util.Log;
 import android.view.Menu;
+import android.view.MotionEvent;
+import android.view.View;
 import android.widget.TextView;
 
 import com.xyx.R;
@@ -25,10 +29,10 @@ public class AstroDetailsActivity extends Activity {
 		Intent intent = getIntent();
 		Integer index = intent.getExtras().getInt(Utils.EXTRA_ASTRO_DATA);
 		String gettype = intent.getExtras().getString(Utils.EXTRA_GET_TYPE_OF_ASTRO);
-		DataFromMyAPI api = new DataFromMyAPI(new IDataFromMyAPIEvent() {
+		DataFromMyAPI api = new DataFromMyAPI(getLayoutInflater().inflate(R.layout.activity_astro_details, null), new IDataFromMyAPIEvent() {
 			
 			@Override
-			public void updateUI(ArrayList<String> data) {
+			public void updateUI(ArrayList<String> data, View view) {
 				if (data == null)
 					return;
 				
@@ -85,4 +89,32 @@ public class AstroDetailsActivity extends Activity {
 		getMenuInflater().inflate(R.menu.astro_details, menu);
 		return true;
 	}
+
+	@Override
+	public boolean onTouchEvent(MotionEvent event) {
+		
+		int action = MotionEventCompat.getActionMasked(event);
+		
+		switch (action) {
+		case (MotionEvent.ACTION_MOVE):
+			Log.d("Debug", "Action was move.");
+			return true;
+		case (MotionEvent.ACTION_DOWN):
+			Log.d("Debug", "Action was down");
+			return true;
+		case (MotionEvent.ACTION_CANCEL):
+			Log.d("Debug", "Action was cancel");
+			return true;
+		case (MotionEvent.ACTION_UP):
+			Log.d("Debug", "Action was up.");
+			return true;
+		case (MotionEvent.ACTION_OUTSIDE):
+			Log.d("Debug", "Action was outside");
+			return true;
+		default:
+			return super.onTouchEvent(event);
+		}
+	}
+	
+	
 }

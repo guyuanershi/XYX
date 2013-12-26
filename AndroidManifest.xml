@@ -36,6 +36,9 @@
             android:name="com.xyx.activity.AstroDetailsMoreActivity"
             android:label="@string/title_activity_astro_details_more" >
         </activity>
+        <activity 
+            android:name="com.xyx.activity.AstroDetailsViewPager"
+            android:label="@string/astroViewPager"></activity>
     </application>
 
 </manifest>
