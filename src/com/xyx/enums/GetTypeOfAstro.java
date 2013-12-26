@@ -4,6 +4,6 @@ public enum GetTypeOfAstro {
 	TODAY,
 	TOMORROW,
 	WEEK,
-	MOUNTH,
+	MONTH,
 	YEAR
 }

@@ -86,12 +86,6 @@ public class MainActivity extends Activity {
         //final View controlsView = findViewById(R.id.fullscreen_content_controls);
         //final View contentView = findViewById(R.id.fullscreen_content);
         final GridView contentView = (GridView)findViewById(R.id.astro_main_content);
-        final Spinner spinner = (Spinner)findViewById(R.id.get_type_astro);
-        
-        ArrayAdapter adapter = ArrayAdapter.createFromResource(this, R.array.getTypeAstro, android.R.layout.simple_spinner_item);
-        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        spinner.setAdapter(adapter);
-        spinner.setOnItemSelectedListener(new SpinnerXMLSelectedListener());
         
         // Set up an instance of SystemUiHider to control the system UI for
         // this activity.

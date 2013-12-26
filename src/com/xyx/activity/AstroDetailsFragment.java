@@ -1,11 +1,14 @@
 package com.xyx.activity;
 
 import java.util.ArrayList;
+
+import android.app.Activity;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.RatingBar;
 import android.widget.TextView;
 
 import com.xyx.R;
@@ -31,22 +34,28 @@ public class AstroDetailsFragment extends Fragment {
 				if (data == null)
 					return;
 				
+				String strVal = Utils.processRawData(data,"");
+				((Activity)view.getContext()).setTitle(strVal);
+				
 				TextView tvSummary = (TextView)view.findViewById(R.id.summary);
-				TextView tvSummaryVal = (TextView)view.findViewById(R.id.summary_val);
-				String strVal = Utils.processRawData(data,tvSummary.getText().toString());
-				tvSummaryVal.setText(strVal);
+				RatingBar rb = (RatingBar)view.findViewById(R.id.ratingbarSummary);
+				strVal = Utils.processRawData(data,tvSummary.getText().toString());
+				rb.setRating(Integer.parseInt(strVal));
 				
 				TextView tvLove = (TextView)view.findViewById(R.id.love);
-				TextView tvLoveVal = (TextView)view.findViewById(R.id.love_val);
-				tvLoveVal.setText(Utils.processRawData(data,tvLove.getText().toString()));
+				RatingBar rbLove = (RatingBar)view.findViewById(R.id.ratingbarLove);
+				strVal = Utils.processRawData(data,tvLove.getText().toString());
+				rbLove.setRating(Integer.parseInt(strVal));
 				
 				TextView tvWork = (TextView)view.findViewById(R.id.work);
-				TextView tvWorkVal = (TextView)view.findViewById(R.id.work_val);
-				tvWorkVal.setText(Utils.processRawData(data,tvWork.getText().toString()));
+				RatingBar rbWork = (RatingBar)view.findViewById(R.id.ratingbarWork);
+				strVal = Utils.processRawData(data,tvWork.getText().toString());
+				rbWork.setRating(Integer.parseInt(strVal));
 				
 				TextView tvMoney = (TextView)view.findViewById(R.id.money);
-				TextView tvMoneyVal = (TextView)view.findViewById(R.id.money_val);
-				tvMoneyVal.setText(Utils.processRawData(data,tvMoney.getText().toString()));
+				RatingBar rbMoney = (RatingBar)view.findViewById(R.id.ratingbarMoney);
+				strVal = Utils.processRawData(data,tvMoney.getText().toString());
+				rbMoney.setRating(Integer.parseInt(strVal));
 				
 				TextView tvHealth = (TextView)view.findViewById(R.id.health);
 				TextView tvHealthVal = (TextView)view.findViewById(R.id.health_val);
@@ -77,17 +86,25 @@ public class AstroDetailsFragment extends Fragment {
 		});
 		Integer noInteger = getArguments().getInt("no");
 		String type = getArguments().getString("type");
+		Integer astroIndex = getArguments().getInt("astroIndex");
+		String astroName = getArguments().getString("astroName");
 		
 		//update the title
 		TextView titleTextView = (TextView)_view.findViewById(R.id.titleAstro);
 		titleTextView.setText(type);
 		
-		api.execute(String.valueOf(noInteger), type);
+		api.execute(String.valueOf(astroIndex), type);
 	}
 
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
 			Bundle savedInstanceState) {
+		
+		View parent = (View)_view.getParent();
+		if (parent != null && parent instanceof ViewGroup){
+			((ViewGroup)parent).removeView(_view);
+		}
+		
 		return _view;
 		
 	}

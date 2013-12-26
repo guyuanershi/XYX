@@ -39,7 +39,7 @@ public class DataFromMyAPI extends AsyncTask<String, Void, ArrayList<String>>{
 				case WEEK:
 					data = idata.MYAPI_astro_week(Integer.valueOf(arg0[0]), "UTF-8");
 					break;
-				case MOUNTH:
+				case MONTH:
 					data = idata.MYAPI_astro_month(Integer.valueOf(arg0[0]), "UTF-8");
 					break;
 				case YEAR:

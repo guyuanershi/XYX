@@ -24,10 +24,10 @@
         android:textStyle="bold" /> -->
 	     
 	        
-	    <Spinner 
+	  <!--   <Spinner 
 	        android:id="@+id/get_type_astro"
 	        android:layout_width="match_parent"
-	        android:layout_height="wrap_content"/>
+	        android:layout_height="wrap_content"/> -->
 	
 	    <GridView
 	        android:id="@+id/astro_main_content"

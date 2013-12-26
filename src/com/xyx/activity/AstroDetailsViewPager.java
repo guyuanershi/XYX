@@ -1,14 +1,19 @@
 package com.xyx.activity;
 
+import java.util.ArrayList;
+
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
+import android.view.View;
 
 import com.xyx.R;
 import com.xyx.enums.GetTypeOfAstro;
+import com.xyx.util.Utils;
 
 public class AstroDetailsViewPager extends FragmentActivity {
 	
@@ -17,13 +22,19 @@ public class AstroDetailsViewPager extends FragmentActivity {
 		super.onCreate(savedInstanceState);
 		
 		setContentView(R.layout.activity_astro_viewpager);
-		initViewPager();
+		Intent intent = getIntent();
+		
+		initViewPager(intent.getExtras().getInt(Utils.EXTRA_ASTRO_DATA),
+				      intent.getExtras().getString(Utils.EXTRA_GET_TYPE_OF_ASTRO));
 	}
 	
 	class Myadapter extends FragmentPagerAdapter{
-		
-		public Myadapter(FragmentManager fm){
+		private int _astroIndex;
+		private String _astroName;
+		public Myadapter(FragmentManager fm, int astroIndex, String astroName){
 			super(fm);
+			_astroIndex = astroIndex;
+			_astroName = astroName;
 		}
 
 		@Override
@@ -37,19 +48,27 @@ public class AstroDetailsViewPager extends FragmentActivity {
 				fragment = new AstroDetailsFragment();
 				break;
 			case WEEK:
-			case MOUNTH:
+			case MONTH:
 				fragment = new AstroDetailsMoreFragment();
+				break;
 			default:
 				fragment = new AstroDetailsFragment();
 				break;
 			}
 			
+			//views.add(fragment);
+			
 			Bundle args = new Bundle();
 			args.putInt("no", possition);
 			args.putString("type", typeOfAstro.name());
+			args.putInt("astroIndex", _astroIndex);
+			args.putString("astroName", _astroName);
 			fragment.setArguments(args);
 			return fragment;
 		}
+		
+		
+		
 
 		@Override
 		public int getCount() {
@@ -59,9 +78,9 @@ public class AstroDetailsViewPager extends FragmentActivity {
 		
 	}
 	
-	private void initViewPager() {
+	private void initViewPager(int astroIndex, String astroname) {
 		ViewPager viewPager = (ViewPager)findViewById(R.id.vPager);
-		viewPager.setAdapter(new Myadapter(getSupportFragmentManager()));
+		viewPager.setAdapter(new Myadapter(getSupportFragmentManager(), astroIndex, astroname));
 	}
 
 }
