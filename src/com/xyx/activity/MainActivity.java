@@ -2,31 +2,27 @@ package com.xyx.activity;
 
 import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.concurrent.ExecutionException;
 
-import android.R.anim;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
+import android.inputmethodservice.Keyboard;
+import android.inputmethodservice.Keyboard.Key;
 import android.net.ConnectivityManager;
 import android.os.Bundle;
 import android.os.Handler;
+import android.view.KeyEvent;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
-import android.widget.AdapterView.OnItemSelectedListener;
-import android.widget.ArrayAdapter;
 import android.widget.GridView;
 import android.widget.SimpleAdapter;
-import android.widget.Spinner;
 import android.widget.Toast;
 
 import com.xyx.R;
-import com.xyx.R.color;
 import com.xyx.enums.GetTypeOfAstro;
 import com.xyx.receiver.ConnectionReceiver;
-import com.xyx.server.hprose.DataFromMyAPI;
 import com.xyx.util.AstroUtil;
 import com.xyx.util.SystemUiHider;
 import com.xyx.util.Utils;
@@ -70,6 +66,8 @@ public class MainActivity extends Activity {
     
     private GetTypeOfAstro _getGetTypeOfAstro = GetTypeOfAstro.TODAY;
 
+    private int countKeyBack = 0;
+    
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -242,5 +240,45 @@ public class MainActivity extends Activity {
 		}
 		super.onDestroy();
 	}
+
+	@Override
+	public boolean onKeyDown(int keyCode, KeyEvent event) {
+		switch (keyCode) {
+		case KeyEvent.KEYCODE_BACK:
+			countKeyBack += 1;
+			if (countKeyBack < 2){
+				final Toast toast = Toast.makeText(this.getBaseContext(), "Click back button again to close XYX", Toast.LENGTH_SHORT);
+				toast.show();
+				
+				Handler handler = new Handler();
+				handler.postDelayed(new Runnable() {
+					@Override
+					public void run() {
+						toast.cancel();
+					}
+				}, 1000);
+				
+			} else {
+				finish();
+			}
+			break;
+
+		default:
+			break;
+		}
+		return true;
+	}
+
+	@Override
+	protected void onStop() {
+		// TODO Auto-generated method stub
+		super.onStop();
+		
+		//if this activity is not active, then clear the count 
+		// keyback number
+		countKeyBack = 0;
+	}
+	
+	
     
 }
