@@ -1,5 +1,8 @@
 package com.xyx.activity;
 
+import java.util.ArrayList;
+import java.util.Iterator;
+
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -7,12 +10,18 @@ import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
+import android.support.v4.view.ViewPager.OnPageChangeListener;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
 
 import com.xyx.R;
 import com.xyx.enums.GetTypeOfAstro;
 import com.xyx.util.Utils;
 
 public class AstroDetailsViewPager extends FragmentActivity {
+	
+	private ImageView[] pointViews = new ImageView[5];
+	private Integer currentIndex = -1;
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -23,6 +32,7 @@ public class AstroDetailsViewPager extends FragmentActivity {
 		
 		initViewPager(intent.getExtras().getInt(Utils.EXTRA_ASTRO_DATA),
 				      intent.getExtras().getString(Utils.EXTRA_GET_TYPE_OF_ASTRO));
+		initPoints();
 	}
 	
 	class Myadapter extends FragmentPagerAdapter{
@@ -71,7 +81,47 @@ public class AstroDetailsViewPager extends FragmentActivity {
 	
 	private void initViewPager(int astroIndex, String astroname) {
 		ViewPager viewPager = (ViewPager)findViewById(R.id.vPager);
+		viewPager.setOnPageChangeListener(new myPagerListener());
 		viewPager.setAdapter(new Myadapter(getSupportFragmentManager(), astroIndex, astroname));
 	}
 
+	private void initPoints(){
+		LinearLayout llLayout = (LinearLayout)findViewById(R.id.pps);
+		
+		for (int i = 0; i < pointViews.length ; i++) {
+			pointViews[i] = (ImageView)llLayout.getChildAt(i);
+			pointViews[i].setEnabled(false);
+			pointViews[i].setTag(i);
+		}
+		
+		currentIndex = 0;
+		pointViews[currentIndex].setEnabled(true);
+	}
+	
+	private class myPagerListener implements OnPageChangeListener{
+
+		@Override
+		public void onPageScrollStateChanged(int arg0) {
+			// TODO Auto-generated method stub
+		}
+
+		@Override
+		public void onPageScrolled(int arg0, float arg1, int arg2) {
+			// TODO Auto-generated method stub
+		}
+
+		@Override
+		public void onPageSelected(int arg0) {
+			setCurDot(arg0);
+		}
+	}
+	
+    private void setCurDot(int positon){ 
+        if (positon < 0 || positon > pointViews.length - 1 || currentIndex == positon) { 
+            return; 
+        } 
+        pointViews[positon].setEnabled(true); 
+        pointViews[currentIndex].setEnabled(false); 
+        currentIndex = positon; 
+    } 
 }
