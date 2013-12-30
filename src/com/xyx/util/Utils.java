@@ -56,4 +56,22 @@ public class Utils {
 	public static void setIsConnected(Boolean isConnected) {
 		Utils.isConnected = isConnected;
 	}
+	
+	public static int getResourceByName(Class classtype, String resName){
+		int id = 0;
+		if (classtype == null) return id;
+		try {
+			id = classtype.getDeclaredField(resName.toLowerCase()).getInt(null);
+		} catch (IllegalAccessException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (IllegalArgumentException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (NoSuchFieldException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return id;
+	}
 }

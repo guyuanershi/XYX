@@ -1,7 +1,5 @@
 package com.xyx.activity;
 
-import java.util.ArrayList;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -9,7 +7,6 @@ import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
-import android.view.View;
 
 import com.xyx.R;
 import com.xyx.enums.GetTypeOfAstro;
@@ -56,8 +53,6 @@ public class AstroDetailsViewPager extends FragmentActivity {
 				break;
 			}
 			
-			//views.add(fragment);
-			
 			Bundle args = new Bundle();
 			args.putInt("no", possition);
 			args.putString("type", typeOfAstro.name());
@@ -66,15 +61,11 @@ public class AstroDetailsViewPager extends FragmentActivity {
 			fragment.setArguments(args);
 			return fragment;
 		}
-		
-		
-		
 
 		@Override
 		public int getCount() {
 			return GetTypeOfAstro.values().length;
 		}
-		
 		
 	}
 	

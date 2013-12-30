@@ -167,9 +167,6 @@ public class MainActivity extends Activity {
 
         
         contentView.setOnItemClickListener(new OnItemClickListener() {
-        	
-        	
-        	
         	@Override
         	public void onItemClick(AdapterView<?> arg0,//The AdapterView where the click happened   
                     View arg1,//The view within the AdapterView that was clicked  
@@ -177,10 +174,12 @@ public class MainActivity extends Activity {
                     long arg3//The row id of the item that was clicked  
                     ) {   
         				Context context = arg0.getContext();
+        				HashMap hashMap = ((HashMap)arg0.getAdapter().getItem(arg2));
+        				
         				if (Utils.getIsConnected()){
         					Intent intent = new Intent(context, AstroDetailsViewPager.class);
             				intent.putExtra(Utils.EXTRA_ASTRO_DATA, arg2);
-            				intent.putExtra(Utils.EXTRA_GET_TYPE_OF_ASTRO, _getGetTypeOfAstro.name());
+            				intent.putExtra(Utils.EXTRA_GET_TYPE_OF_ASTRO, hashMap.get("ItemText").toString());
             				startActivity(intent);
 	        			} else {
 	        				Toast.makeText(context, context.getString(R.string.no_connection), Toast.LENGTH_SHORT).show();
@@ -242,22 +241,6 @@ public class MainActivity extends Activity {
 			unregisterReceiver(_connectionReceiver);
 		}
 		super.onDestroy();
-	}
-    
-	private class SpinnerXMLSelectedListener implements OnItemSelectedListener {
-
-		@Override
-		public void onItemSelected(AdapterView<?> arg0, View arg1, int arg2,
-				long arg3) {
-			_getGetTypeOfAstro = GetTypeOfAstro.values()[arg2];
-		}
-
-		@Override
-		public void onNothingSelected(AdapterView<?> arg0) {
-			// TODO Auto-generated method stub
-			
-		}
-		
 	}
     
 }
