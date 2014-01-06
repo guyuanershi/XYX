@@ -13,5 +13,4 @@
     <string name="no_connection">没有网络</string>
     <string name="title_activity_astro_details_more">AstroDetailsMoreActivity</string>
     <string name="astroViewPager">astro viewpager</string>
-
 </resources>

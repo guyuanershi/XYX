@@ -51,12 +51,14 @@ public class AstroDetailsViewPager extends FragmentActivity {
 			switch (typeOfAstro) {
 			case TODAY:
 			case TOMORROW:
-			case YEAR:
 				fragment = new AstroDetailsFragment();
 				break;
 			case WEEK:
-			case MONTH:
 				fragment = new AstroDetailsMoreFragment();
+				break;
+			case MONTH:
+			case YEAR:
+				fragment = new AstroDetailsMonthFragment();
 				break;
 			default:
 				fragment = new AstroDetailsFragment();
