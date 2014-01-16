@@ -4,7 +4,9 @@ import hprose.client.HproseHttpClient;
 
 import java.util.ArrayList;
 
+import android.app.Fragment;
 import android.os.AsyncTask;
+import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 
@@ -13,9 +15,8 @@ import com.xyx.interfaces.IDataFromMyAPIEvent;
 
 public class DataFromMyAPI extends AsyncTask<String, Void, ArrayList<String>>{
 	
-	public DataFromMyAPI(View view, IDataFromMyAPIEvent event){
+	public DataFromMyAPI(IDataFromMyAPIEvent event){
 		_event = event;
-		_view = view;
 	}
 	
 	@Override
@@ -64,10 +65,9 @@ public class DataFromMyAPI extends AsyncTask<String, Void, ArrayList<String>>{
 	@Override
 	protected void onPostExecute(ArrayList<String> result) {
 		
-		if (_event != null && _view != null){
-			_event.updateUI(result, _view);
+		if (_event != null){
+			_event.updateUI(result);
 		}
-		
 		super.onPostExecute(result);
 		
 	}
@@ -75,7 +75,6 @@ public class DataFromMyAPI extends AsyncTask<String, Void, ArrayList<String>>{
 	//
 	private IDataFromMyAPIEvent _event;
 	private HproseHttpClient _client;
-	private View _view;
 		
 	interface IData {
 		ArrayList<String> MYAPI_astro_day(int id, String chartSet);

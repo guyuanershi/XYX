@@ -7,8 +7,6 @@ import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
-import android.inputmethodservice.Keyboard;
-import android.inputmethodservice.Keyboard.Key;
 import android.net.ConnectivityManager;
 import android.os.Bundle;
 import android.os.Handler;
@@ -23,7 +21,6 @@ import android.widget.Toast;
 import com.xyx.R;
 import com.xyx.enums.GetTypeOfAstro;
 import com.xyx.receiver.ConnectionReceiver;
-import com.xyx.util.AstroUtil;
 import com.xyx.util.SystemUiHider;
 import com.xyx.util.Utils;
 
@@ -83,8 +80,7 @@ public class MainActivity extends Activity {
 
         //final View controlsView = findViewById(R.id.fullscreen_content_controls);
         //final View contentView = findViewById(R.id.fullscreen_content);
-        final GridView contentView = (GridView)findViewById(R.id.astro_main_content);
-        
+
         // Set up an instance of SystemUiHider to control the system UI for
         // this activity.
 //        mSystemUiHider = SystemUiHider.getInstance(this, contentView, HIDER_FLAGS);
@@ -127,7 +123,9 @@ public class MainActivity extends Activity {
 //                    }
 //                });
 
-        // Set up the user interaction to manually show or hide the system UI.
+
+
+//        // Set up the user interaction to manually show or hide the system UI.
 //        contentView.setOnClickListener(new View.OnClickListener() {
 //            @Override
 //            public void onClick(View view) {
@@ -138,46 +136,49 @@ public class MainActivity extends Activity {
 //                }
 //            }
 //        });
-        
+
+        final GridView contentView = (GridView)findViewById(R.id.astro_main_content);
+
         Class<com.xyx.R.drawable> cls = R.drawable.class;
         ArrayList<HashMap<String, Object>> ltImgItems = new ArrayList<HashMap<String,Object>>();
-        for (String astroName : AstroUtil.Astros(getBaseContext())){
+        String[] astros = getResources().getStringArray(R.array.astros);
+        String[] astroEns = getResources().getStringArray(R.array.astros_en);
+
+        for (int index = 0; index < astros.length; index++){
             HashMap<String, Object> item = new HashMap<String, Object>();
-            //item.put("ItemImage", R.drawable.aquarius);
-            item.put("ItemText", astroName);
+            item.put("ItemText", astros[index]);
             try {
-				int value = cls.getDeclaredField(astroName.toLowerCase()).getInt(null);
+				int value = cls.getDeclaredField(astroEns[index].toLowerCase()).getInt(null);
 				item.put("ItemImage", value);
+                item.put("ItemTextEn", astroEns[index]);
 			} catch (Exception e) {
-				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
             ltImgItems.add(item);
         }
-        
+
         SimpleAdapter sadp = new SimpleAdapter(this,
         		ltImgItems,
-        		R.layout.astro_gridview,
-        		new String[]{"ItemImage", "ItemText"},
-        		new int[] {R.id.itemImage, R.id.itemText});
-        
+        		R.layout.astro_gridviewitem,
+        		new String[]{"ItemImage", "ItemText", "ItemTextEn"},
+        		new int[] {R.id.itemImage, R.id.itemText, R.id.itemTextEn});
+
         contentView.setAdapter(sadp);
 
-        
         contentView.setOnItemClickListener(new OnItemClickListener() {
         	@Override
-        	public void onItemClick(AdapterView<?> arg0,//The AdapterView where the click happened   
-                    View arg1,//The view within the AdapterView that was clicked  
-                    int arg2,//The position of the view in the adapter  
-                    long arg3//The row id of the item that was clicked  
-                    ) {   
+        	public void onItemClick(AdapterView<?> arg0,//The AdapterView where the click happened
+                    View arg1,//The view within the AdapterView that was clicked
+                    int arg2,//The position of the view in the adapter
+                    long arg3//The row id of the item that was clicked
+                    ) {
         				Context context = arg0.getContext();
         				HashMap hashMap = ((HashMap)arg0.getAdapter().getItem(arg2));
-        				
+
         				if (Utils.getIsConnected()){
         					Intent intent = new Intent(context, AstroDetailsViewPager.class);
             				intent.putExtra(Utils.EXTRA_ASTRO_DATA, arg2);
-            				intent.putExtra(Utils.EXTRA_GET_TYPE_OF_ASTRO, hashMap.get("ItemText").toString());
+            				intent.putExtra(Utils.EXTRA_GET_TYPE_OF_ASTRO, hashMap.get("ItemTextEn").toString());
             				startActivity(intent);
 	        			} else {
 	        				Toast.makeText(context, context.getString(R.string.no_connection), Toast.LENGTH_SHORT).show();

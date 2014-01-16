@@ -1,10 +1,40 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string-array name="getTypeAstro">
-        <item>每日运势</item>
-        <item>明日运势</item>
-        <item>每周运势</item>
-        <item>每月运势</item>
-        <item>年度运势</item>
+        <item>TODAY</item>
+        <item>TOMORROW</item>
+        <item>WEEK</item>
+        <item>MONTH</item>
+        <item>YEAR</item>
+    </string-array>
+
+    <string-array name="astros_en">
+        <item>Aries</item>
+        <item>Taurus</item>
+        <item>Gemini</item>
+        <item>Cancer</item>
+        <item>Leo</item>
+        <item>Virgo</item>
+        <item>Libra</item>
+        <item>Scorpio</item>
+        <item>Sagittarius</item>
+        <item>Capricorn</item>
+        <item>Aquarius</item>
+        <item>Pisces</item>
+    </string-array>
+
+    <string-array name="astros">
+        <item>Aries</item>
+        <item>Taurus</item>
+        <item>Gemini</item>
+        <item>Cancer</item>
+        <item>Leo</item>
+        <item>Virgo</item>
+        <item>Libra</item>
+        <item>Scorpio</item>
+        <item>Sagittarius</item>
+        <item>Capricorn</item>
+        <item>Aquarius</item>
+        <item>Pisces</item>
     </string-array>
 </resources>

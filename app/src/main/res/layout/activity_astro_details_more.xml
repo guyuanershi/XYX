@@ -8,7 +8,7 @@
    <TextView
        		 android:id="@+id/titleAstroMore"
              android:layout_width="fill_parent"
-             android:layout_height="29dp"
+             android:layout_height="100dp"
              android:background="#FFFFFF"
              android:gravity="center"
              android:textColor="#000000"

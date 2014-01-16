@@ -23,15 +23,16 @@ View _view;
 		_view = inflater.inflate(R.layout.activity_astro_details_month, null);
 		
 		//TODO: initialize the view
-		DataFromMyAPI api = new DataFromMyAPI(_view, new IDataFromMyAPIEvent()
+		DataFromMyAPI api = new DataFromMyAPI(new IDataFromMyAPIEvent()
 		{
 
 			@Override
-			public void updateUI(ArrayList<String> data, View view) {
+			public void updateUI(ArrayList<String> data) {
 				// TODO Auto-generated method stub
 				
 			}
 		});
+        //api.execute()
 	}
 
 	

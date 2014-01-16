@@ -38,16 +38,18 @@ public class AstroDetailsViewPager extends FragmentActivity {
 	class Myadapter extends FragmentPagerAdapter{
 		private int _astroIndex;
 		private String _astroName;
+        private GetTypeOfAstro[] _astroTypes;
 		public Myadapter(FragmentManager fm, int astroIndex, String astroName){
 			super(fm);
 			_astroIndex = astroIndex;
 			_astroName = astroName;
+            _astroTypes = GetTypeOfAstro.values();
 		}
 
 		@Override
 		public Fragment getItem(int possition) {
 			Fragment fragment = null;
-			GetTypeOfAstro typeOfAstro = GetTypeOfAstro.values()[possition];
+			GetTypeOfAstro typeOfAstro = _astroTypes[possition];
 			switch (typeOfAstro) {
 			case TODAY:
 			case TOMORROW:
