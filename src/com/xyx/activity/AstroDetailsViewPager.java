@@ -57,8 +57,10 @@ public class AstroDetailsViewPager extends FragmentActivity {
 				fragment = new AstroDetailsMoreFragment();
 				break;
 			case MONTH:
-			case YEAR:
 				fragment = new AstroDetailsMonthFragment();
+				break;
+			case YEAR:
+				fragment = new AstroDetailsYearFragment();
 				break;
 			default:
 				fragment = new AstroDetailsFragment();
