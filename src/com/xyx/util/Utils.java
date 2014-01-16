@@ -137,9 +137,52 @@ public class Utils {
 		return StrArray;
 	}
 	
-	public static String processMonthData(ArrayList<String> rawData, String dataType)
+	public static String processMonthData(ArrayList<String> rawData, String dataType, boolean isValue)
 	{
 		String strVal = "";		
+		for (String s : rawData)
+		{
+			if(s.contains(dataType))
+			{
+				s = s.replaceAll("\\{|\\}", "");
+				
+				if(isValue)
+				{
+					String[] ss = s.split(",");
+					for(String s2 : ss)
+					{
+						if(s2.contains("value="))
+						{
+							String[] sss = s2.split("=");
+							strVal = sss[1];
+							break;
+						}
+						
+					}
+					
+					if(strVal!="")
+						break;
+				}
+				else 
+				{
+					String[] ss = s.split(",");
+					for(String s2 : ss)
+					{
+						if(s2.contains("rank="))
+						{
+							String[] sss = s2.split("=");
+							strVal = sss[1];
+							break;
+						}
+						
+					}
+					
+					if(strVal!="")
+						break;
+				}
+			}
+		}
+		
 		return strVal;
 		
 	}
@@ -150,9 +193,52 @@ public class Utils {
 		return strVal;
 		
 	}
-	public static String processYearAstroData(ArrayList<String> rawData, String dataType)
+	public static String processYearAstroData(ArrayList<String> rawData, String dataType, boolean isValue)
 	{
 		String strVal = "";		
+		for (String s : rawData)
+		{
+			if(s.contains(dataType))
+			{
+				s = s.replaceAll("\\{|\\}", "");
+				
+				if(isValue)
+				{
+					String[] ss = s.split(",");
+					for(String s2 : ss)
+					{
+						if(s2.contains("value="))
+						{
+							String[] sss = s2.split("=");
+							strVal = sss[1];
+							break;
+						}
+						
+					}
+					
+					if(strVal!="")
+						break;
+				}
+				else 
+				{
+					String[] ss = s.split(",");
+					for(String s2 : ss)
+					{
+						if(s2.contains("rank="))
+						{
+							String[] sss = s2.split("=");
+							strVal = sss[1];
+							break;
+						}
+						
+					}
+					
+					if(strVal!="")
+						break;
+				}
+			}
+		}
+		
 		return strVal;
 		
 	}
