@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">XYX</string>
+    <string name="dummy_button">Dummy Button</string>
+    <string name="dummy_content">DUMMY\nCONTENT</string>
+    <string name="title_activity_astro_detail">AstroDetailActivity</string>
+    <string name="title_activity_astro_details">AstroDetailsActivity</string>
+    <string name="action_settings">Settings</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="no_connection">没有网络</string>
+    <string name="title_activity_astro_details_more">AstroDetailsMoreActivity</string>
+    <string name="astroViewPager">astro viewpager</string>
+</resources>

@@ -15,6 +15,4 @@ gen/
 # Local configuration files (sdk path, etc)
 local.properties
 
-# Eclipse project files
-#.classpath
-#.project
+# android studio ignore
