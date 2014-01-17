@@ -250,7 +250,7 @@ public class MainActivity extends Activity {
 		case KeyEvent.KEYCODE_BACK:
 			countKeyBack += 1;
 			if (countKeyBack < 2){
-				final Toast toast = Toast.makeText(this.getBaseContext(), "Click back button again to close XYX", Toast.LENGTH_SHORT);
+				final Toast toast = Toast.makeText(this.getBaseContext(), getResources().getString(R.string.quitMessage), Toast.LENGTH_SHORT);
 				toast.show();
 				
 				Handler handler = new Handler();

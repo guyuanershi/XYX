@@ -133,8 +133,8 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         public static final int astroViewPager=0x7f070002;
         public static final int dummy_button=0x7f070003;
         public static final int dummy_content=0x7f070004;
-        public static final int hello_world=0x7f070005;
-        public static final int no_connection=0x7f070006;
+        public static final int no_connection=0x7f070005;
+        public static final int quitMessage=0x7f070006;
         public static final int title_activity_astro_detail=0x7f070007;
         public static final int title_activity_astro_details=0x7f070008;
         public static final int title_activity_astro_details_more=0x7f070009;
