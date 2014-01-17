@@ -2,5 +2,6 @@
 <resources>
 
     <string name="app_name">幸运星</string>
-
+    <string name="quitMessage">再点击返回键退出幸运星</string>
+    <string name="no_connection">没有网络连接！</string>
 </resources>
