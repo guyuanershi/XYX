@@ -8,6 +8,7 @@ import com.xyx.server.hprose.DataFromMyAPI;
 import com.xyx.util.Utils;
 
 import android.app.Activity;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
@@ -113,6 +114,7 @@ public class AstroDetailsMoreFragment extends Fragment {
                 Integer noInteger = bundle.getInt("no");
                 TextView titleTextView = (TextView)_view.findViewById(R.id.titleAstroMore);
                 titleTextView.setText(getResources().getStringArray(R.array.getTypeAstro)[noInteger]);
+                titleTextView.setTextColor(Utils.randomColor(Color.BLACK));
 			}
 		});
 		

@@ -12,7 +12,8 @@
              android:background="#FFFFFF"
              android:gravity="center"
              android:textColor="#000000"
-             android:textSize="22sp"  />
+             android:textSize="50sp"
+       android:textStyle="bold" />
 <ScrollView 
     android:layout_width="fill_parent" 
     android:layout_height="fill_parent"

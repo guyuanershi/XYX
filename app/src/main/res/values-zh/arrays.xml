@@ -9,18 +9,18 @@
     </string-array>
 
     <string-array name="astros">
-        <item>白羊座</item>
-        <item>金牛座</item>
-        <item>双子座</item>
-        <item>巨蟹座</item>
-        <item>狮子座</item>
-        <item>处女座</item>
-        <item>天平座</item>
-        <item>天蝎座</item>
-        <item>射手座</item>
-        <item>魔蝎座</item>
-        <item>水瓶座</item>
-        <item>双鱼座</item>
+        <item>白羊座\n 3.21 ~ 4.19</item>
+        <item>金牛座\n 4.20 ~ 5.20</item>
+        <item>双子座\n 5.21 ~ 6.21</item>
+        <item>巨蟹座\n 6.22 ~ 7.22</item>
+        <item>狮子座\n 7.23 ~ 8.22</item>
+        <item>处女座\n 8.23 ~ 9.22</item>
+        <item>天平座\n 9.23 ~ 10.23</item>
+        <item>天蝎座\n 10.24 ~ 11.22</item>
+        <item>射手座\n 11.23 ~ 12.21</item>
+        <item>魔蝎座\n 12.22 ~ 1.19</item>
+        <item>水瓶座\n 1.20 ~ 2.18</item>
+        <item>双鱼座\n 2.19 ~ 3.20</item>
     </string-array>
 
 </resources>

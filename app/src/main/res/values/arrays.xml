@@ -24,17 +24,17 @@
     </string-array>
 
     <string-array name="astros">
-        <item>Aries</item>
-        <item>Taurus</item>
-        <item>Gemini</item>
-        <item>Cancer</item>
-        <item>Leo</item>
-        <item>Virgo</item>
-        <item>Libra</item>
-        <item>Scorpio</item>
-        <item>Sagittarius</item>
-        <item>Capricorn</item>
-        <item>Aquarius</item>
-        <item>Pisces</item>
+        <item>Aries\n 3.21 ~ 4.19</item>
+        <item>Taurus\n 4.20 ~ 5.20</item>
+        <item>Gemini\n 5.21 ~ 6.21</item>
+        <item>Cancer\n 6.22 ~ 7.22</item>
+        <item>Leo\n 7.23 ~ 8.22</item>
+        <item>Virgo\n 8.23 ~ 9.22</item>
+        <item>Libra\n 9.23 ~ 10.23</item>
+        <item>Scorpio\n 10.24 ~ 11.22</item>
+        <item>Sagittarius\n 11.23 ~ 12.21</item>
+        <item>Capricorn\n 12.22 ~ 1.19</item>
+        <item>Aquarius\n 1.20 ~ 2.18</item>
+        <item>Pisces\n 2.19 ~ 3.20</item>
     </string-array>
 </resources>

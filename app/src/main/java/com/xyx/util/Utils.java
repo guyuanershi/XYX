@@ -1,11 +1,13 @@
 package com.xyx.util;
 
 import java.util.ArrayList;
+import java.util.Random;
 
 import android.R;
 import android.R.bool;
 import android.R.integer;
 import android.content.Context;
+import android.graphics.Color;
 
 public class Utils {
     public final static String EXTRA_ASTRO_DATA = "com.xyx.extra.astro.MESSAGE";
@@ -136,26 +138,114 @@ public class Utils {
 		
 		return StrArray;
 	}
-	
-	public static String processMonthData(ArrayList<String> rawData, String dataType)
+
+    public static String processMonthData(ArrayList<String> rawData, String dataType, boolean isValue)
+    {
+        String strVal = "";
+        for (String s : rawData)
+        {
+            if(s.contains(dataType))
+            {
+                s = s.replaceAll("\\{|\\}", "");
+
+                if(isValue)
+                {
+                    String[] ss = s.split(",");
+                    for(String s2 : ss)
+                    {
+                        if(s2.contains("value="))
+                        {
+                            String[] sss = s2.split("=");
+                            strVal = sss[1];
+                            break;
+                        }
+
+                    }
+
+                    if(strVal!="")
+                        break;
+                }
+                else
+                {
+                    String[] ss = s.split(",");
+                    for(String s2 : ss)
+                    {
+                        if(s2.contains("rank="))
+                        {
+                            String[] sss = s2.split("=");
+                            strVal = sss[1];
+                            break;
+                        }
+
+                    }
+
+                    if(strVal!="")
+                        break;
+                }
+            }
+        }
+
+        return strVal;
+
+    }
+
+
+    public static String processYearLoveData(ArrayList<String> rawData, String dataType)
 	{
 		String strVal = "";		
 		return strVal;
 		
 	}
-    
-	public static String processYearLoveData(ArrayList<String> rawData, String dataType)
-	{
-		String strVal = "";		
-		return strVal;
-		
-	}
-	public static String processYearAstroData(ArrayList<String> rawData, String dataType)
-	{
-		String strVal = "";		
-		return strVal;
-		
-	}
+    public static String processYearAstroData(ArrayList<String> rawData, String dataType, boolean isValue)
+    {
+        String strVal = "";
+        for (String s : rawData)
+        {
+            if(s.contains(dataType))
+            {
+                s = s.replaceAll("\\{|\\}", "");
+
+                if(isValue)
+                {
+                    String[] ss = s.split(",");
+                    for(String s2 : ss)
+                    {
+                        if(s2.contains("value="))
+                        {
+                            String[] sss = s2.split("=");
+                            strVal = sss[1];
+                            break;
+                        }
+
+                    }
+
+                    if(strVal!="")
+                        break;
+                }
+                else
+                {
+                    String[] ss = s.split(",");
+                    for(String s2 : ss)
+                    {
+                        if(s2.contains("rank="))
+                        {
+                            String[] sss = s2.split("=");
+                            strVal = sss[1];
+                            break;
+                        }
+
+                    }
+
+                    if(strVal!="")
+                        break;
+                }
+            }
+        }
+
+        return strVal;
+
+    }
+
     private static Boolean isConnected;
 
 	public static Boolean getIsConnected() {
@@ -184,4 +274,8 @@ public class Utils {
 		return id;
 	}
 
+    public static int randomColor(int notcolor){
+        Random rad = new Random();
+        return Color.rgb(rad.nextInt(230), rad.nextInt(230), rad.nextInt(230));
+    }
 }

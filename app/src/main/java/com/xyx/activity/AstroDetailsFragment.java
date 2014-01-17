@@ -3,6 +3,7 @@ package com.xyx.activity;
 import java.util.ArrayList;
 
 import android.app.Activity;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.text.Spannable;
@@ -94,10 +95,11 @@ public class AstroDetailsFragment extends Fragment {
                 TextView titleTextView = (TextView)_view.findViewById(R.id.titleAstro);
                 int id = Utils.getResourceByName(R.drawable.class, astroName);
                 if (id != 0){
-                    ImageSpan imageSpan = new ImageSpan(_view.getResources().getDrawable(id));
-                    SpannableString spannableString = new SpannableString(getResources().getStringArray(R.array.getTypeAstro)[noInteger]);
-                    spannableString.setSpan(imageSpan, spannableString.length(), spannableString.length(), Spannable.SPAN_INCLUSIVE_EXCLUSIVE);
-                    titleTextView.setText(spannableString);
+                    //ImageSpan imageSpan = new ImageSpan(_view.getResources().getDrawable(id));
+                    //SpannableString spannableString = new SpannableString(getResources().getStringArray(R.array.getTypeAstro)[noInteger]);
+                    //spannableString.setSpan(imageSpan, spannableString.length(), spannableString.length(), Spannable.SPAN_INCLUSIVE_EXCLUSIVE);
+                    titleTextView.setText(getResources().getStringArray(R.array.getTypeAstro)[noInteger]);
+                    titleTextView.setTextColor(Utils.randomColor(Color.BLACK));
                 }
 			}
 		});

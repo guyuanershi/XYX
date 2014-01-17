@@ -1,8 +1,5 @@
 package com.xyx.activity;
 
-import java.util.ArrayList;
-import java.util.Iterator;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -50,22 +47,24 @@ public class AstroDetailsViewPager extends FragmentActivity {
 		public Fragment getItem(int possition) {
 			Fragment fragment = null;
 			GetTypeOfAstro typeOfAstro = _astroTypes[possition];
-			switch (typeOfAstro) {
-			case TODAY:
-			case TOMORROW:
-				fragment = new AstroDetailsFragment();
-				break;
-			case WEEK:
-				fragment = new AstroDetailsMoreFragment();
-				break;
-			case MONTH:
-			case YEAR:
-				fragment = new AstroDetailsMonthFragment();
-				break;
-			default:
-				fragment = new AstroDetailsFragment();
-				break;
-			}
+            switch (typeOfAstro) {
+                case TODAY:
+                case TOMORROW:
+                    fragment = new AstroDetailsFragment();
+                    break;
+                case WEEK:
+                    fragment = new AstroDetailsMoreFragment();
+                    break;
+                case MONTH:
+                    fragment = new AstroDetailsMonthFragment();
+                    break;
+                case YEAR:
+                    fragment = new AstroDetailsYearFragment();
+                    break;
+                default:
+                    fragment = new AstroDetailsFragment();
+                    break;
+            }
 			
 			Bundle args = new Bundle();
 			args.putInt("no", possition);
