@@ -11,6 +11,7 @@ import com.xyx.util.Utils;
 
 import android.content.Context;
 import android.content.SharedPreferences;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
@@ -29,7 +30,8 @@ public class AstroDetailsYearFragment extends Fragment {
 		LayoutInflater inflater = getLayoutInflater(savedInstanceState);
 		_view = inflater.inflate(R.layout.activity_astro_details_year, null);
         final SharedPreferences sharedPref = getActivity().getPreferences(Context.MODE_PRIVATE);
-		
+        final Bundle bundle = getArguments();
+
 		//TODO: initialize the view
 		DataFromMyAPI api = new DataFromMyAPI(new IDataFromMyAPIEvent()
 		{
@@ -54,7 +56,7 @@ public class AstroDetailsYearFragment extends Fragment {
         } else {
             Set<String> set = sharedPref.getStringSet(Utils.PREFERENCE_YEAR, null);
             if (set != null){
-                _updateUI(new ArrayList<String>(set), null);
+                _updateUI(new ArrayList<String>(set), bundle);
             }
         }
         //api.execute(String.valueOf(getArguments().getInt("astroIndex")), getArguments().getString("type"));
@@ -111,6 +113,12 @@ public class AstroDetailsYearFragment extends Fragment {
         TextView tvTipsVal = (TextView)_view.findViewById(R.id.tips_val);
         strVal = Utils.processYearAstroData(data, tvTips.getText().toString(), true);
         tvTipsVal.setText(strVal);
+
+        //update the title
+        Integer noInteger = bundle.getInt("no");
+        TextView titleTextView = (TextView)_view.findViewById(R.id.titleAstroMore);
+        titleTextView.setText(getResources().getStringArray(R.array.getTypeAstro)[noInteger]);
+        //titleTextView.setTextColor(Utils.randomColor(Color.BLACK));
     }
 	
 	@Override

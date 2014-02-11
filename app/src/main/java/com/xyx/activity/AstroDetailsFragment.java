@@ -143,7 +143,7 @@ public class AstroDetailsFragment extends Fragment {
             //SpannableString spannableString = new SpannableString(getResources().getStringArray(R.array.getTypeAstro)[noInteger]);
             //spannableString.setSpan(imageSpan, spannableString.length(), spannableString.length(), Spannable.SPAN_INCLUSIVE_EXCLUSIVE);
             titleTextView.setText(getResources().getStringArray(R.array.getTypeAstro)[noInteger]);
-            titleTextView.setTextColor(Utils.randomColor(Color.BLACK));
+            //titleTextView.setTextColor(Utils.randomColor(Color.BLACK));
         }
     }
 

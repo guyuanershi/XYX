@@ -144,7 +144,7 @@ public class AstroDetailsMoreFragment extends Fragment {
         Integer noInteger = bundle.getInt("no");
         TextView titleTextView = (TextView)_view.findViewById(R.id.titleAstroMore);
         titleTextView.setText(getResources().getStringArray(R.array.getTypeAstro)[noInteger]);
-        titleTextView.setTextColor(Utils.randomColor(Color.BLACK));
+        //titleTextView.setTextColor(Utils.randomColor(Color.BLACK));
     }
 
 	@Override

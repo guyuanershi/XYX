@@ -113,7 +113,7 @@ public class AstroDetailsMonthFragment extends Fragment {
         //update the title
         TextView titleTextView = (TextView)_view.findViewById(R.id.titleAstroMore);
         titleTextView.setText(getResources().getStringArray(R.array.getTypeAstro)[noInteger]);
-        titleTextView.setTextColor(Utils.randomColor(Color.BLACK));
+        //titleTextView.setTextColor(Utils.randomColor(Color.BLACK));
     }
 
     @Override

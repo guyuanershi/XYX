@@ -23,7 +23,7 @@
 	<TableRow android:layout_marginRight="10dip">
 		<TextView
 		    android:id="@+id/summary"
-	        android:text="综合运势"
+	        android:text="@string/total_fortune"
 	        android:padding="3dip" />
 
 	     <RatingBar
@@ -38,7 +38,7 @@
 	<TableRow>
 		<TextView
 	        android:id="@+id/love"
-	        android:text= "爱情运势"
+	        android:text= "@string/love_fortune"
 	        android:padding="3dip" />
 
 	     <RatingBar
@@ -53,7 +53,7 @@
 	<TableRow>
 		<TextView
 	        android:id="@+id/work"
-	        android:text= "工作状况"
+	        android:text= "@string/work"
 	        android:padding="3dip" />
 
 	    <RatingBar
@@ -68,7 +68,7 @@
 	<TableRow>
 		<TextView
 	        android:id="@+id/money"
-	        android:text= "理财投资"
+	        android:text= "@string/finance"
 	        android:padding="3dip" />
 
 	    <RatingBar
@@ -83,7 +83,7 @@
 	<TableRow>
 		<TextView
 	        android:id="@+id/health"
-	         android:text= "健康指数"
+	         android:text= "@string/health"
 	        android:padding="3dip" />
 	    <TextView
 	        android:id="@+id/health_val"
@@ -94,7 +94,7 @@
 	<TableRow>
 		<TextView
 	        android:id="@+id/business"
-	        android:text= "商谈指数"
+	        android:text= "@string/negotiate"
 	        android:padding="3dip" />
 	    <TextView
 	        android:id="@+id/business_val"
@@ -105,7 +105,7 @@
 		<TableRow>
 		<TextView
 	        android:id="@+id/lucky_color"
-	        android:text="幸运颜色"
+	        android:text="@string/lucky_color"
 	        android:padding="3dip" />
 	    <TextView
 	        android:id="@+id/lucky_color_val"
@@ -116,7 +116,7 @@
 		<TableRow>
 		<TextView
 	        android:id="@+id/lucky_num"
-	        android:text= "幸运数字"
+	        android:text= "@string/lucky_number"
 	        android:padding="3dip" />
 	    <TextView
 	        android:id="@+id/lucky_num_val"
@@ -127,7 +127,7 @@
 	<TableRow>
 		<TextView
 	        android:id="@+id/fit_astro"
-	        android:text= "速配星座"
+	        android:text= "@string/speed_dating"
 	        android:padding="3dip" />
 	    <TextView
 	        android:id="@+id/fit_astro_val"
@@ -138,7 +138,7 @@
 	<TableRow>
 		<TextView
 	        android:id="@+id/summary_text"
-	        android:text="综合概述"
+	        android:text="@string/outline"
 	        android:padding="3dip" />
 	    <TextView
 	        android:id="@+id/summary_text_val"

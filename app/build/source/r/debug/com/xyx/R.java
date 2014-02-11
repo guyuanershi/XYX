@@ -129,15 +129,42 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
     }
     public static final class string {
         public static final int action_settings=0x7f070000;
+        public static final int alone=0x7f07000a;
         public static final int app_name=0x7f070001;
         public static final int astroViewPager=0x7f070002;
+        public static final int bad_days=0x7f07000b;
         public static final int dummy_button=0x7f070003;
         public static final int dummy_content=0x7f070004;
+        public static final int finance=0x7f07000c;
+        public static final int finance_2=0x7f07000d;
+        public static final int finance_3=0x7f07000e;
+        public static final int good_days=0x7f07000f;
+        public static final int health=0x7f070010;
+        public static final int health_2=0x7f070011;
+        public static final int love_fortune=0x7f070012;
+        public static final int love_fortune_2=0x7f070013;
+        public static final int lucky_color=0x7f070014;
+        public static final int lucky_number=0x7f070015;
+        public static final int lucky_stuff=0x7f070016;
+        public static final int negotiate=0x7f070017;
         public static final int no_connection=0x7f070005;
+        public static final int not_alone=0x7f070018;
+        public static final int outline=0x7f070019;
         public static final int quitMessage=0x7f070006;
+        public static final int release=0x7f07001a;
+        public static final int sex=0x7f07001b;
+        public static final int speed_dating=0x7f07001c;
+        public static final int study=0x7f07001d;
+        public static final int tips=0x7f07001e;
+        public static final int tips_2=0x7f07001f;
         public static final int title_activity_astro_detail=0x7f070007;
         public static final int title_activity_astro_details=0x7f070008;
         public static final int title_activity_astro_details_more=0x7f070009;
+        public static final int total_fortune=0x7f070020;
+        public static final int total_fortune_2=0x7f070021;
+        public static final int work=0x7f070022;
+        public static final int work_2=0x7f070023;
+        public static final int work_3=0x7f070024;
     }
     public static final class style {
         /** 
