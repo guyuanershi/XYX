@@ -20,7 +20,7 @@ import android.view.ViewGroup;
 import android.widget.RatingBar;
 import android.widget.TextView;
 
-class AstroDetailsMonthFragment extends Fragment {
+public class AstroDetailsMonthFragment extends Fragment {
 
     private View _view;
 

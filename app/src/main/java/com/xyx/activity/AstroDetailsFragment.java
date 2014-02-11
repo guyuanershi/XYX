@@ -7,7 +7,6 @@ import java.util.Set;
 import android.app.Activity;
 import android.content.Context;
 import android.content.SharedPreferences;
-import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
@@ -22,7 +21,7 @@ import com.xyx.interfaces.IDataFromMyAPIEvent;
 import com.xyx.server.hprose.DataFromMyAPI;
 import com.xyx.util.Utils;
 
-class AstroDetailsFragment extends Fragment {
+public class AstroDetailsFragment extends Fragment {
 
 	private View _view;
 
