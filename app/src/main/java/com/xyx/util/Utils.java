@@ -3,15 +3,24 @@ package com.xyx.util;
 import java.util.ArrayList;
 import java.util.Random;
 
-import android.R;
-import android.R.bool;
-import android.R.integer;
-import android.content.Context;
 import android.graphics.Color;
 
 public class Utils {
     public final static String EXTRA_ASTRO_DATA = "com.xyx.extra.astro.MESSAGE";
     public final static String EXTRA_GET_TYPE_OF_ASTRO = "com.xyx.extra.astro.GETTYPEOFASTRO";
+
+    public final static String PREFERENCE_TODAY = "com.xyx.preferences.PREFERENCE_TODAY";
+    public final static String PREFERENCE_TODAY_TIME = "com.xyx.preferences.PREFERENCE_TODAY_TIME";
+    public final static String PREFERENCE_TOMMOROW = "com.xyx.preferences.PREFERENCE_TOMMOROW";
+    public final static String PREFERENCE_TOMMOROW_TIME = "com.xyx.preferences.PREFERENCE_TOMMOROW_TIME";
+    public final static String PREFERENCE_WEEK = "com.xyx.preferences.PREFERENCE_WEEK";
+    public final static String PREFERENCE_WEEK_TIME = "com.xyx.preferences.PREFERENCE_WEEK_TIME";
+    public final static String PREFERENCE_MONTH = "com.xyx.preferences.PREFERENCE_MONTH";
+    public final static String PREFERENCE_MONTH_TIME = "com.xyx.preferences.PREFERENCE_MONTH_TIME";
+    public final static String PREFERENCE_YEAR = "com.xyx.preferences.PREFERENCE_YEAR";
+    public final static String PREFERENCE_YEAR_TIME = "com.xyx.preferences.PREFERENCE_YEAR_TIME";
+
+    public static int CURRENT_TIME = -1;
     
     public static String[] trans(ArrayList<String> arrayList){
     	if (arrayList.size() == 0) return new String[]{};

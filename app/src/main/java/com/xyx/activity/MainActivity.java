@@ -1,6 +1,7 @@
 package com.xyx.activity;
 
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.HashMap;
 
 import android.app.Activity;
@@ -16,7 +17,6 @@ import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.GridView;
 import android.widget.SimpleAdapter;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import com.xyx.R;
@@ -76,7 +76,10 @@ public class MainActivity extends Activity {
         IntentFilter filter = new IntentFilter();
         filter.addAction(ConnectivityManager.CONNECTIVITY_ACTION);
         registerReceiver(_connectionReceiver, filter);
-        
+
+        //inintial current time
+        Utils.CURRENT_TIME = Calendar.getInstance().get(Calendar.DAY_OF_YEAR);
+
         setContentView(R.layout.activity_main);
 
         //final View controlsView = findViewById(R.id.fullscreen_content_controls);

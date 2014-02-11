@@ -4,11 +4,8 @@ import hprose.client.HproseHttpClient;
 
 import java.util.ArrayList;
 
-import android.app.Fragment;
 import android.os.AsyncTask;
-import android.os.Bundle;
 import android.util.Log;
-import android.view.View;
 
 import com.xyx.enums.GetTypeOfAstro;
 import com.xyx.interfaces.IDataFromMyAPIEvent;
@@ -27,7 +24,7 @@ public class DataFromMyAPI extends AsyncTask<String, Void, ArrayList<String>>{
 			_client = new HproseHttpClient("http://api.uihoo.com/astro/astro.hprose.php");
 			idata = (IData)_client.useService(IData.class);
 		}
-		if (_client != null){
+		if (_client != null && idata != null){
 			try {
 				GetTypeOfAstro getTypeOfAstro = GetTypeOfAstro.valueOf(arg0[1]);
 				switch (getTypeOfAstro) {
@@ -67,6 +64,7 @@ public class DataFromMyAPI extends AsyncTask<String, Void, ArrayList<String>>{
 		
 		if (_event != null){
 			_event.updateUI(result);
+            _event.SavingData(result);
 		}
 		super.onPostExecute(result);
 		
