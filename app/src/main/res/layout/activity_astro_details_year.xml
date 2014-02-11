@@ -5,13 +5,11 @@
     android:layout_height="fill_parent"
     android:orientation="vertical">
     <TextView
-        android:id="@+id/titleAstroMore"
+        android:id="@+id/titleAstroYear"
         android:layout_width="fill_parent"
-        android:layout_height="100dp"
-        android:background="#FFFFFF"
+        android:layout_height="50dp"
         android:gravity="center"
-        android:textColor="#000000"
-        android:textSize="50sp"
+        android:textSize="25sp"
         android:textStyle="bold" />
     <ScrollView
         android:layout_width="fill_parent"

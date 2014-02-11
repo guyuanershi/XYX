@@ -52,8 +52,8 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
     public static final class id {
         public static final int Money=0x7f0a0018;
         public static final int Money_val=0x7f0a0019;
-        public static final int action_settings=0x7f0a003e;
-        public static final int astro_main_content=0x7f0a003a;
+        public static final int action_settings=0x7f0a003f;
+        public static final int astro_main_content=0x7f0a003b;
         public static final int badday=0x7f0a002f;
         public static final int badday_val=0x7f0a0030;
         public static final int business=0x7f0a000b;
@@ -62,9 +62,9 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         public static final int fit_astro_val=0x7f0a0012;
         public static final int health=0x7f0a0009;
         public static final int health_val=0x7f0a000a;
-        public static final int itemImage=0x7f0a003b;
-        public static final int itemText=0x7f0a003c;
-        public static final int itemTextEn=0x7f0a003d;
+        public static final int itemImage=0x7f0a003c;
+        public static final int itemText=0x7f0a003d;
+        public static final int itemTextEn=0x7f0a003e;
         public static final int love=0x7f0a0003;
         public static final int love_val=0x7f0a0017;
         public static final int luckyThing=0x7f0a001e;
@@ -78,16 +78,16 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         public static final int luckyday=0x7f0a002d;
         public static final int luckyday_val=0x7f0a002e;
         public static final int money=0x7f0a0007;
-        public static final int money_val=0x7f0a0037;
+        public static final int money_val=0x7f0a0038;
         public static final int nolove=0x7f0a0023;
         public static final int nolove_val=0x7f0a0025;
-        public static final int pps=0x7f0a0039;
+        public static final int pps=0x7f0a003a;
         public static final int ratingbarHealth=0x7f0a0026;
         public static final int ratingbarLove=0x7f0a0004;
         public static final int ratingbarMoney=0x7f0a0008;
         public static final int ratingbarNoLove=0x7f0a0024;
         public static final int ratingbarSex=0x7f0a002b;
-        public static final int ratingbarStudy=0x7f0a0034;
+        public static final int ratingbarStudy=0x7f0a0035;
         public static final int ratingbarSummary=0x7f0a0002;
         public static final int ratingbarWithLove=0x7f0a0021;
         public static final int ratingbarWork=0x7f0a0006;
@@ -96,8 +96,8 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         public static final int releaseWay_val=0x7f0a001b;
         public static final int sex=0x7f0a002a;
         public static final int sex_val=0x7f0a002c;
-        public static final int study=0x7f0a0033;
-        public static final int study_val=0x7f0a0035;
+        public static final int study=0x7f0a0034;
+        public static final int study_val=0x7f0a0036;
         public static final int summary=0x7f0a0001;
         public static final int summary_text=0x7f0a0013;
         public static final int summary_text_val=0x7f0a0014;
@@ -106,13 +106,14 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         public static final int tips_val=0x7f0a0032;
         public static final int titleAstro=0x7f0a0000;
         public static final int titleAstroMore=0x7f0a0015;
-        public static final int vPager=0x7f0a0038;
+        public static final int titleAstroYear=0x7f0a0033;
+        public static final int vPager=0x7f0a0039;
         public static final int withlove=0x7f0a0020;
         public static final int withlove_val=0x7f0a0022;
         public static final int work=0x7f0a0005;
         public static final int workStudy=0x7f0a0027;
         public static final int workStudy_val=0x7f0a0029;
-        public static final int work_val=0x7f0a0036;
+        public static final int work_val=0x7f0a0037;
     }
     public static final class layout {
         public static final int activity_astro_details=0x7f030000;
@@ -220,5 +221,5 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
           @attr name com.xyx:buttonBarStyle
         */
         public static final int ButtonBarContainerTheme_buttonBarStyle = 0;
-    }
+    };
 }

@@ -116,7 +116,7 @@ public class AstroDetailsYearFragment extends Fragment {
 
         //update the title
         Integer noInteger = bundle.getInt("no");
-        TextView titleTextView = (TextView)_view.findViewById(R.id.titleAstroMore);
+        TextView titleTextView = (TextView)_view.findViewById(R.id.titleAstroYear);
         titleTextView.setText(getResources().getStringArray(R.array.getTypeAstro)[noInteger]);
         //titleTextView.setTextColor(Utils.randomColor(Color.BLACK));
     }
