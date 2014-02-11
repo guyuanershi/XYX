@@ -44,7 +44,7 @@ public class DataFromMyAPI extends AsyncTask<String, Void, ArrayList<String>>{
 					data = idata.MYAPI_astro_month(Integer.valueOf(arg0[0]), "UTF-8");
 					break;
 				case YEAR:
-					data = idata.MYAPI_astro_tomorrow(Integer.valueOf(arg0[0]), "UTF-8");
+					data = idata.MYAPI_astro_year(Integer.valueOf(arg0[0]), "UTF-8");
 					break;
 				default:
 					break;
