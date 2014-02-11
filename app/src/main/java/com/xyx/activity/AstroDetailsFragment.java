@@ -22,7 +22,7 @@ import com.xyx.interfaces.IDataFromMyAPIEvent;
 import com.xyx.server.hprose.DataFromMyAPI;
 import com.xyx.util.Utils;
 
-public class AstroDetailsFragment extends Fragment {
+class AstroDetailsFragment extends Fragment {
 
 	private View _view;
 

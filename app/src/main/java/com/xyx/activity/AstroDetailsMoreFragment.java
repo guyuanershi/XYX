@@ -20,9 +20,9 @@ import android.view.ViewGroup;
 import android.widget.RatingBar;
 import android.widget.TextView;
 
-public class AstroDetailsMoreFragment extends Fragment {
+class AstroDetailsMoreFragment extends Fragment {
 
-	View _view;
+	private View _view;
 	
 	@Override
 	public void onCreate(Bundle savedInstanceState) {

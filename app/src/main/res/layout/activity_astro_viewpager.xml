@@ -23,11 +23,11 @@
     <android.support.v4.view.ViewPager 
         android:id="@+id/vPager"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="0dip"
         android:layout_weight="1.0"
         android:gravity="center"
         android:textColor="#000000"
-        android:textSize="22dip"/>
+        android:textSize="22sp"/>
     
     <LinearLayout android:id="@+id/pps"
                   android:layout_width="wrap_content"
