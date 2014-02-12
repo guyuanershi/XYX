@@ -30,6 +30,7 @@ public class AstroDetailsMonthFragment extends Fragment {
         LayoutInflater inflater = getLayoutInflater(savedInstanceState);
         _view = inflater.inflate(R.layout.activity_astro_details_month, null);
         final SharedPreferences sharedPref = getActivity().getPreferences(Context.MODE_PRIVATE);
+        final String name = getArguments().getString("astroName");
 
         //TODO: initialize the view
         DataFromMyAPI api = new DataFromMyAPI(new IDataFromMyAPIEvent()
@@ -43,17 +44,17 @@ public class AstroDetailsMonthFragment extends Fragment {
             public void SavingData(ArrayList<String> data) {
                 //save data into preference
                 SharedPreferences.Editor editor = sharedPref.edit();
-                editor.putInt(Utils.PREFERENCE_MONTH_TIME, Utils.CURRENT_TIME);
-                editor.putStringSet(Utils.PREFERENCE_MONTH, new HashSet<String>(data));
+                editor.putInt(name + Utils.PREFERENCE_MONTH_TIME, Utils.CURRENT_TIME);
+                editor.putStringSet(name + Utils.PREFERENCE_MONTH, new HashSet<String>(data));
                 editor.commit();
             }
         });
 
-        Integer current_time = sharedPref.getInt(Utils.PREFERENCE_MONTH_TIME, -1);
+        Integer current_time = sharedPref.getInt(name + Utils.PREFERENCE_MONTH_TIME, -1);
         if (current_time == -1 || current_time != Utils.CURRENT_TIME){
             api.execute(String.valueOf(getArguments().getInt("astroIndex")), getArguments().getString("type"));
         } else {
-            Set<String> set = sharedPref.getStringSet(Utils.PREFERENCE_MONTH, null);
+            Set<String> set = sharedPref.getStringSet(name + Utils.PREFERENCE_MONTH, null);
             if (set != null){
                 _updateUI(new ArrayList<String>(set), null);
             }

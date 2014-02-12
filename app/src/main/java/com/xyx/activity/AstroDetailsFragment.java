@@ -33,7 +33,8 @@ public class AstroDetailsFragment extends Fragment {
         LayoutInflater inflater = getLayoutInflater(savedInstanceState);
         _view = inflater.inflate(R.layout.activity_astro_details, null);
         final Bundle bundle = getArguments();
-
+        final String type = bundle.getString("type");
+        final String name = bundle.getString("astroName");
         final SharedPreferences sharedPref = getActivity().getPreferences(Context.MODE_PRIVATE);
 
 		DataFromMyAPI api = new DataFromMyAPI(new IDataFromMyAPIEvent() {
@@ -45,13 +46,14 @@ public class AstroDetailsFragment extends Fragment {
             @Override
             public void SavingData(ArrayList<String> data) {
                 //save data into preference
-                String type = bundle.getString("type");
+                //type = bundle.getString("type");
                 SharedPreferences.Editor editor = sharedPref.edit();
                 if (type == GetTypeOfAstro.TODAY.name()){
-                    editor.putInt(Utils.PREFERENCE_TODAY_TIME, Utils.CURRENT_TIME);
-                    editor.putStringSet(Utils.PREFERENCE_TODAY, new HashSet<String>(data));
+                    editor.putInt(name + Utils.PREFERENCE_TODAY_TIME, Utils.CURRENT_TIME);
+                    editor.putStringSet(name + Utils.PREFERENCE_TODAY, new HashSet<String>(data));
                 } else if (type == GetTypeOfAstro.TOMORROW.name()){
-                    editor.putStringSet(Utils.PREFERENCE_TOMMOROW, new HashSet<String>(data));
+                    editor.putStringSet(name + Utils.PREFERENCE_TOMMOROW, new HashSet<String>(data));
+                    editor.putInt(name + Utils.PREFERENCE_TOMMOROW_TIME, Utils.CURRENT_TIME);
                 }
                 editor.commit();
             }
@@ -59,12 +61,11 @@ public class AstroDetailsFragment extends Fragment {
 
         Integer current_time = -1;
         String typeString = "";
-        String type = bundle.getString("type");
         if (type == GetTypeOfAstro.TODAY.name()){
-            current_time = sharedPref.getInt(Utils.PREFERENCE_TODAY_TIME, -1);
+            current_time = sharedPref.getInt(name + Utils.PREFERENCE_TODAY_TIME, -1);
             typeString = Utils.PREFERENCE_TODAY;
         } else if (type == GetTypeOfAstro.TOMORROW.name()){
-            current_time = sharedPref.getInt(Utils.PREFERENCE_TOMMOROW_TIME, -1);
+            current_time = sharedPref.getInt(name + Utils.PREFERENCE_TOMMOROW_TIME, -1);
             typeString = Utils.PREFERENCE_TOMMOROW;
         }
 
