@@ -78,7 +78,7 @@ public class Utils {
 						if(s2.contains("value="))
 						{
 							String[] sss = s2.split("=");
-							strVal = sss[1];
+							strVal = sss[1].trim();
 							break;
 						}
 						
@@ -165,7 +165,7 @@ public class Utils {
                         if(s2.contains("value="))
                         {
                             String[] sss = s2.split("=");
-                            strVal = sss[1];
+                            strVal = sss[1].trim();
                             break;
                         }
 
@@ -215,7 +215,7 @@ public class Utils {
                         if(s2.contains("value="))
                         {
                             String[] sss = s2.split("=");
-                            strVal = sss[1];
+                            strVal = sss[1].trim();
                             break;
                         }
 

@@ -37,32 +37,32 @@
                   android:orientation="horizontal">
         <ImageView android:layout_width="wrap_content"
                    android:layout_height="wrap_content"
-                   android:layout_gravity="center"
-                   android:padding="15.0dip"
+                   android:layout_gravity="bottom"
+                   android:padding="10.0dip"
                    android:src="@drawable/point"/>
         
         <ImageView android:layout_width="wrap_content"
            android:layout_height="wrap_content"
-           android:layout_gravity="center"
-           android:padding="15.0dip"
+           android:layout_gravity="bottom"
+           android:padding="10.0dip"
            android:src="@drawable/point"/>
         
         <ImageView android:layout_width="wrap_content"
    			android:layout_height="wrap_content"
-   			android:layout_gravity="center"
-   			android:padding="15.0dip"
+   			android:layout_gravity="bottom"
+   			android:padding="10.0dip"
    			android:src="@drawable/point"/>
         
         <ImageView android:layout_width="wrap_content"
 			android:layout_height="wrap_content"
-			android:layout_gravity="center"
-			android:padding="15.0dip"
+			android:layout_gravity="bottom"
+			android:padding="10.0dip"
 			android:src="@drawable/point"/>
         
         <ImageView android:layout_width="wrap_content"
 				android:layout_height="wrap_content"
-				android:layout_gravity="center"
-				android:padding="15.0dip"
+				android:layout_gravity="bottom"
+				android:padding="10.0dip"
 				android:src="@drawable/point"/>
     </LinearLayout>
 
