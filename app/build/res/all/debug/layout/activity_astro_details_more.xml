@@ -1,0 +1,235 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical"
+    android:background="#000000">
+
+   <TextView
+       		 android:id="@+id/titleAstroMore"
+             android:layout_width="fill_parent"
+             android:layout_height="100dp"
+             android:background="#FFFFFF"
+             android:gravity="center"
+             android:textColor="#000000"
+             android:textSize="50sp"
+       android:textStyle="bold" />
+<ScrollView 
+    android:layout_width="fill_parent" 
+    android:layout_height="fill_parent"
+    android:scrollbars="vertical">
+   <TableLayout
+       android:layout_width="fill_parent" 
+       android:layout_height="fill_parent"
+       android:gravity="fill_vertical" >
+      <TableRow android:layout_marginRight="10dip"> 
+		<TextView 
+		    android:id="@+id/summary"
+	        android:text="@string/total_fortune_2"
+	        android:padding="3dip" /> 
+	     <RatingBar
+	         android:id="@+id/ratingbarSummary"
+	         style="?android:attr/ratingBarStyleSmall"
+	         android:layout_gravity="left|center"
+	         android:layout_marginLeft="10dip"
+	         android:numStars="5"
+	         android:stepSize="1" />
+	 </TableRow>
+	 <TableRow android:layout_marginRight="10dip"> 
+		<TextView  android:padding="3dip" /> 
+		<TextView 
+		    android:id="@+id/summary_val"
+	        android:text="@string/outline"
+	        android:layout_width="fill_parent"
+  			android:layout_height="wrap_content"
+	        android:singleLine="false"
+	        android:scrollbars="vertical"
+	        android:layout_weight="10"
+	        android:layout_marginLeft="10dip" 
+	        /> 
+	 </TableRow>
+	 <TableRow>
+	     	<TextView 
+	        android:id="@+id/love"
+	        android:text= "@string/love_fortune"
+	        android:padding="3dip" /> 
+	 </TableRow>  
+	 <TableRow> 
+		<TextView 
+	        android:id="@+id/withlove"
+	        android:text= "@string/not_alone"
+	        android:padding="3dip" /> 
+	     <RatingBar
+	         android:id="@+id/ratingbarWithLove"
+	         style="?android:attr/ratingBarStyleSmall"
+	         android:layout_gravity="left|center"
+	         android:layout_marginLeft="10dip"
+	         android:numStars="5"
+	         android:stepSize="1" />
+	 </TableRow>
+	 <TableRow android:layout_marginRight="10dip"> 
+		<TextView />
+		<TextView 
+		    android:id="@+id/withlove_val"
+	        android:layout_width="fill_parent"
+  			android:layout_height="wrap_content"
+	        android:singleLine="false"
+	        android:scrollbars="vertical"
+	        android:layout_weight="10"
+	        android:layout_marginLeft="10dip" /> 
+	 </TableRow>
+	 <TableRow> 
+		<TextView 
+	        android:id="@+id/nolove"
+	        android:text= "@string/alone"
+	        android:padding="3dip" /> 
+	     <RatingBar
+	         android:id="@+id/ratingbarNoLove"
+	         style="?android:attr/ratingBarStyleSmall"
+	         android:layout_gravity="left|center"
+	         android:layout_marginLeft="10dip"
+	         android:numStars="5"
+	         android:stepSize="1" />
+	 </TableRow>
+	 <TableRow android:layout_marginRight="10dip"> 
+		<TextView />
+		<TextView 
+		    android:id="@+id/nolove_val"
+	        android:layout_width="fill_parent"
+  			android:layout_height="wrap_content"
+	        android:singleLine="false"
+	        android:scrollbars="vertical"
+	        android:layout_weight="10"
+	        android:layout_marginLeft="10dip" /> 
+	 </TableRow>
+	 <TableRow> 
+		<TextView 
+	        android:id="@+id/health"
+	        android:text= "@string/health_2"
+	        android:padding="3dip" /> 
+	    <RatingBar
+	        android:id="@+id/ratingbarHealth"
+	        style="?android:attr/ratingBarStyleSmall"
+	        android:layout_gravity="left|center"
+	        android:layout_marginLeft="10dip"
+	        android:numStars="5"
+	        android:stepSize="1" />
+ 	</TableRow>
+ 	<TableRow android:layout_marginRight="10dip"> 
+		<TextView />
+		<TextView 
+		    android:id="@+id/health_val"
+	        android:layout_width="fill_parent"
+  			android:layout_height="wrap_content"
+	        android:singleLine="false"
+	        android:scrollbars="vertical"
+	        android:layout_weight="10"
+	        android:layout_marginLeft="10dip" /> 
+	 </TableRow>
+
+ 	<TableRow> 
+		<TextView 
+	        android:id="@+id/workStudy"
+	        android:text= "@string/work_2"
+	        android:padding="3dip" /> 
+		<RatingBar
+	        android:id="@+id/ratingbarWorkStudy"
+	        style="?android:attr/ratingBarStyleSmall"
+	        android:layout_gravity="left|center"
+	        android:layout_marginLeft="10dip"
+	        android:numStars="5"
+	        android:stepSize="1" />
+ 	</TableRow>
+ 	<TableRow android:layout_marginRight="10dip"> 
+		<TextView />
+	    <TextView 
+	        android:id="@+id/workStudy_val"
+	        android:layout_width="fill_parent"
+  			android:layout_height="wrap_content"
+	        android:singleLine="false"
+	        android:scrollbars="vertical"
+	        android:layout_weight="10"
+	        android:layout_marginLeft="10dip" /> 
+	 </TableRow>
+ 	<TableRow> 
+		<TextView 
+	        android:id="@+id/sex"
+	        android:text= "@string/sex"
+	        android:padding="3dip" /> 
+		<RatingBar
+	        android:id="@+id/ratingbarSex"
+	        style="?android:attr/ratingBarStyleSmall"
+	        android:layout_gravity="left|center"
+	        android:layout_marginLeft="10dip"
+	        android:numStars="5"
+	        android:stepSize="1" />
+ 	</TableRow>
+ 	<TableRow android:layout_marginRight="10dip"> 
+		<TextView />
+	    <TextView 
+	        android:id="@+id/sex_val"
+	        android:layout_width="fill_parent"
+  			android:layout_height="wrap_content"
+	        android:singleLine="false"
+	        android:scrollbars="vertical"
+	        android:layout_weight="10"
+	        android:layout_marginLeft="10dip" /> 
+	 </TableRow> 
+	 <TableRow> 
+		<TextView 
+	        android:id="@+id/luckyday"
+	        android:text= "@string/good_days"
+	        android:padding="3dip" />
+		<TextView /> 
+ 	</TableRow>
+ 	<TableRow> 
+		<TextView />
+		<TextView 
+	        android:id="@+id/luckyday_val"
+	        android:layout_width="fill_parent"
+  			android:layout_height="wrap_content"
+	        android:singleLine="false"
+	        android:scrollbars="vertical"
+	        android:layout_weight="10"
+	        android:layout_marginLeft="10dip" /> 
+ 	</TableRow>
+ 	<TableRow> 
+		<TextView 
+	        android:id="@+id/badday"
+	        android:text= "@string/bad_days"
+	        android:padding="3dip" /> 
+	        <TextView />
+ 	</TableRow>
+ 	<TableRow> 
+		<TextView />
+		<TextView 
+	        android:id="@+id/badday_val"
+	        android:layout_width="fill_parent"
+  			android:layout_height="wrap_content"
+	        android:singleLine="false"
+	        android:scrollbars="vertical"
+	        android:layout_weight="10"
+	        android:layout_marginLeft="10dip" /> 
+ 	</TableRow>
+ 	<TableRow> 
+		<TextView 
+	        android:id="@+id/tips"
+	        android:text= "@string/tips_2"
+	        android:padding="3dip" />
+		<TextView /> 
+ 	</TableRow>
+ 	<TableRow> 
+		<TextView />
+		<TextView 
+	        android:id="@+id/tips_val"
+	        android:layout_width="fill_parent"
+  			android:layout_height="wrap_content"
+	        android:singleLine="false"
+	        android:scrollbars="vertical"
+	        android:layout_weight="10"
+	        android:layout_marginLeft="10dip" /> 
+ 	</TableRow>      
+   </TableLayout>
+</ScrollView>
+</LinearLayout>
+<!-- From: file:/C:/adworks/XYX/app/src/main/res/layout/activity_astro_details_more.xml -->
