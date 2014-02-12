@@ -22,7 +22,7 @@ import android.widget.TextView;
 
 public class AstroDetailsMoreFragment extends Fragment {
 
-	View _view;
+	private View _view;
 	
 	@Override
 	public void onCreate(Bundle savedInstanceState) {

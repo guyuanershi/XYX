@@ -3,25 +3,27 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:background="#000000">
     <TextView
         android:id="@+id/titleAstroMore"
         android:layout_width="fill_parent"
-        android:layout_height="50dp"
+        android:layout_height="29dp"
+        android:background="#FFFFFF"
         android:gravity="center"
-        android:textSize="25sp"
-        android:textStyle="bold" />
+        android:textColor="#000000"
+        android:textSize="22sp" />
 <ScrollView 
     android:layout_width="fill_parent" 
     android:layout_height="fill_parent"
     android:scrollbars="vertical">
 <TableLayout 
     android:layout_width="match_parent"
-    android:layout_height="wrap_content" >
+    android:layout_height="match_parent" >
     <TableRow android:layout_marginRight="10dip"> 
 		<TextView 
 		    android:id="@+id/summary"
-	        android:text="@string/total_fortune_2"
+	        android:text="整体运势" 
 	        android:padding="3dip" /> 
 	     <RatingBar
 	         android:id="@+id/ratingbarSummary"
@@ -45,7 +47,7 @@
  	<TableRow android:layout_marginRight="10dip"> 
 		<TextView 
 		    android:id="@+id/love"
-	        android:text="@string/love_fortune"
+	        android:text="爱情运势" 
 	        android:padding="3dip" /> 
 
 	     <RatingBar
@@ -70,7 +72,7 @@
 	<TableRow> 
 		<TextView 
 	        android:id="@+id/Money"
-	        android:text= "@string/finance_2"
+	        android:text= "投资理财运"
 	        android:padding="3dip" /> 
 
 	     <RatingBar
@@ -95,7 +97,7 @@
 	<TableRow> 
 		<TextView 
 	        android:id="@+id/release"
-	        android:text= "@string/release"
+	        android:text= "解压方式"
 	        android:padding="3dip" /> 
 		<TextView></TextView>
 	</TableRow> 
@@ -112,7 +114,7 @@
 	<TableRow> 
 		<TextView 
 	        android:id="@+id/luckyTips"
-	        android:text= "@string/tips"
+	        android:text= "开运小秘诀"
 	        android:padding="3dip" /> 
          <TextView  /> 
  	</TableRow>
@@ -129,7 +131,7 @@
  	<TableRow> 
 		<TextView 
 	        android:id="@+id/luckyThing"
-	        android:text= "@string/lucky_stuff"
+	        android:text= "幸运物"
 	        android:padding="3dip" /> 
 	        <TextView  /> 
  	</TableRow> 

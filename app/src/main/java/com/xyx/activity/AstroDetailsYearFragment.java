@@ -114,11 +114,11 @@ public class AstroDetailsYearFragment extends Fragment {
         strVal = Utils.processYearAstroData(data, tvTips.getText().toString(), true);
         tvTipsVal.setText(strVal);
 
-//        //update the title
-//        Integer noInteger = bundle.getInt("no");
-//        TextView titleTextView = (TextView)_view.findViewById(R.id.titleAstroMore);
-//        titleTextView.setText(getResources().getStringArray(R.array.getTypeAstro)[noInteger]);
-//        //titleTextView.setTextColor(Utils.randomColor(Color.BLACK));
+        //update the title
+        Integer noInteger = bundle.getInt("no");
+        TextView titleTextView = (TextView)_view.findViewById(R.id.titleAstroYear);
+        titleTextView.setText(getResources().getStringArray(R.array.getTypeAstro)[noInteger]);
+        //titleTextView.setTextColor(Utils.randomColor(Color.BLACK));
     }
 	
 	@Override

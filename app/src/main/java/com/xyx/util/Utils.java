@@ -198,13 +198,6 @@ public class Utils {
 
     }
 
-
-    public static String processYearLoveData(ArrayList<String> rawData, String dataType)
-	{
-		String strVal = "";		
-		return strVal;
-		
-	}
     public static String processYearAstroData(ArrayList<String> rawData, String dataType, boolean isValue)
     {
         String strVal = "";
