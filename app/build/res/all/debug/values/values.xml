@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- From: file:/C:/adworks/XYX/app/src/main/res/values/arrays.xml -->
+    <eat-comment />
+
+    <string-array name="astros">
+        <item>Aries\n 3.21 ~ 4.19</item>
+        <item>Taurus\n 4.20 ~ 5.20</item>
+        <item>Gemini\n 5.21 ~ 6.21</item>
+        <item>Cancer\n 6.22 ~ 7.22</item>
+        <item>Leo\n 7.23 ~ 8.22</item>
+        <item>Virgo\n 8.23 ~ 9.22</item>
+        <item>Libra\n 9.23 ~ 10.23</item>
+        <item>Scorpio\n 10.24 ~ 11.22</item>
+        <item>Sagittarius\n 11.23 ~ 12.21</item>
+        <item>Capricorn\n 12.22 ~ 1.19</item>
+        <item>Aquarius\n 1.20 ~ 2.18</item>
+        <item>Pisces\n 2.19 ~ 3.20</item>
+    </string-array>
+    <string-array name="astros_en">
+        <item>Aries</item>
+        <item>Taurus</item>
+        <item>Gemini</item>
+        <item>Cancer</item>
+        <item>Leo</item>
+        <item>Virgo</item>
+        <item>Libra</item>
+        <item>Scorpio</item>
+        <item>Sagittarius</item>
+        <item>Capricorn</item>
+        <item>Aquarius</item>
+        <item>Pisces</item>
+    </string-array>
+    <string-array name="getTypeAstro">
+        <item>TODAY</item>
+        <item>TOMORROW</item>
+        <item>WEEK</item>
+        <item>MONTH</item>
+        <item>YEAR</item>
+    </string-array>
+    <!-- From: file:/C:/adworks/XYX/app/src/main/res/values/colors.xml -->
+    <eat-comment />
+
+    <color name="black_overlay">#66000000</color>
+    <!-- From: file:/C:/adworks/XYX/app/src/main/res/values/attrs.xml -->
+    <eat-comment />
+
+    <declare-styleable name="ButtonBarContainerTheme">
+        <attr name="buttonBarStyle" format="reference" />
+        <attr name="buttonBarButtonStyle" format="reference" />
+    </declare-styleable>
+    <!-- From: file:/C:/adworks/XYX/app/src/main/res/values/dimens.xml -->
+    <eat-comment />
+
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+    <!-- From: file:/C:/adworks/XYX/app/src/main/res/values/strings.xml -->
+    <eat-comment />
+
+    <string name="action_settings">Settings</string>
+    <string name="alone">无对象:</string>
+    <string name="app_name">LuckyStar</string>
+    <string name="astroViewPager">astro viewpager</string>
+    <string name="bad_days">黑梅日</string>
+    <string name="dummy_button">Dummy Button</string>
+    <string name="dummy_content">DUMMY\nCONTENT</string>
+    <string name="finance">理财投资</string>
+    <string name="finance_2">投资理财运</string>
+    <string name="finance_3">金钱理财</string>
+    <string name="good_days">红心日</string>
+    <string name="health">健康指数</string>
+    <string name="health_2">健康运势</string>
+    <string name="love_fortune">爱情运势</string>
+    <string name="love_fortune_2">恋爱婚姻</string>
+    <string name="lucky_color">幸运颜色</string>
+    <string name="lucky_number">幸运数字</string>
+    <string name="lucky_stuff">幸运物</string>
+    <string name="negotiate">商谈指数</string>
+    <string name="no_connection">No network connectiong!</string>
+    <string name="not_alone">有对象:</string>
+    <string name="outline">综合概述</string>
+    <string name="quitMessage">Click back button again to close LuckyStar</string>
+    <string name="release">解压方式</string>
+    <string name="sex">性欲指数</string>
+    <string name="speed_dating">速配星座</string>
+    <string name="study">功课学业</string>
+    <string name="tips">开运小诀窍</string>
+    <string name="tips_2">小提示</string>
+    <string name="title_activity_astro_detail">AstroDetailActivity</string>
+    <string name="title_activity_astro_details">AstroDetailsActivity</string>
+    <string name="title_activity_astro_details_more">AstroDetailsMoreActivity</string>
+    <string name="total_fortune">综合运势</string>
+    <string name="total_fortune_2">整体运势</string>
+    <string name="work">工作状况</string>
+    <string name="work_2">工作学业运</string>
+    <string name="work_3">工作职场</string>
+    <!-- From: file:/C:/adworks/XYX/app/src/main/res/values/styles.xml -->
+    <eat-comment />
+
+    <style name="AppBaseTheme" parent="android:Theme.Light.NoTitleBar">
+        <!--
+            Theme customizations available in newer API levels can go in
+            res/values-vXX/styles.xml, while customizations related to
+            backward-compatibility can go here.
+        -->
+    </style>
+
+    <style name="AppTheme" parent="AppBaseTheme">
+        <!-- All customizations that are NOT specific to a particular API-level can go here. -->
+    </style>
+
+    <style name="ButtonBar">
+        <item name="android:paddingLeft">2dp</item>
+        <item name="android:paddingTop">5dp</item>
+        <item name="android:paddingRight">2dp</item>
+        <item name="android:paddingBottom">0dp</item>
+        <item name="android:background">@android:drawable/bottom_bar</item>
+    </style>
+
+    <style name="ButtonBarButton" />
+
+    <style name="FullscreenTheme" parent="android:Theme.Light">
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:windowBackground">@null</item>
+        <item name="buttonBarStyle">@style/ButtonBar</item>
+        <item name="buttonBarButtonStyle">@style/ButtonBarButton</item>
+    </style>
+
+</resources>
