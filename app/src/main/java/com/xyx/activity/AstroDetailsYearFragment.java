@@ -11,7 +11,6 @@ import com.xyx.util.Utils;
 
 import android.content.Context;
 import android.content.SharedPreferences;
-import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
@@ -31,30 +30,31 @@ public class AstroDetailsYearFragment extends Fragment {
 		_view = inflater.inflate(R.layout.activity_astro_details_year, null);
         final SharedPreferences sharedPref = getActivity().getPreferences(Context.MODE_PRIVATE);
         final Bundle bundle = getArguments();
+        final String name = bundle.getString("astroName");
 
 		//TODO: initialize the view
 		DataFromMyAPI api = new DataFromMyAPI(new IDataFromMyAPIEvent()
 		{
 			@Override
 			public void updateUI(ArrayList<String> data) {
-                _updateUI(data, null);
+                _updateUI(data, bundle);
 			}
 
             @Override
             public void SavingData(ArrayList<String> data) {
                 //save data into preference
                 SharedPreferences.Editor editor = sharedPref.edit();
-                editor.putInt(Utils.PREFERENCE_YEAR_TIME, Utils.CURRENT_TIME);
-                editor.putStringSet(Utils.PREFERENCE_YEAR, new HashSet<String>(data));
+                editor.putInt(name + Utils.PREFERENCE_YEAR_TIME, Utils.CURRENT_TIME);
+                editor.putStringSet(name + Utils.PREFERENCE_YEAR, new HashSet<String>(data));
                 editor.commit();
             }
         });
 
-        Integer current_time = sharedPref.getInt(Utils.PREFERENCE_YEAR_TIME, -1);
+        Integer current_time = sharedPref.getInt(name + Utils.PREFERENCE_YEAR_TIME, -1);
         if (current_time == -1 && current_time != Utils.CURRENT_TIME){
             api.execute(String.valueOf(getArguments().getInt("astroIndex")), getArguments().getString("type"));
         } else {
-            Set<String> set = sharedPref.getStringSet(Utils.PREFERENCE_YEAR, null);
+            Set<String> set = sharedPref.getStringSet(name + Utils.PREFERENCE_YEAR, null);
             if (set != null){
                 _updateUI(new ArrayList<String>(set), bundle);
             }
