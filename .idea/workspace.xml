@@ -2,24 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6c3fb724-60b2-4f4e-b181-45a29d8bb5af" name="Default" comment="">
-      <change type="DELETED" beforePath="C:\adworks\XYX\app\build\pre-dexed\debug\hprose_client_for_java_7-58fc0ff627878ff802728eb4322f014325710678.jar" afterPath="" />
-      <change type="DELETED" beforePath="C:\adworks\XYX\app\build\pre-dexed\debug\support-v4-19.0.0-368054dfda89bdffa0588ae338ee8c1cb3416107.jar" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/pre-dexed/debug/hprose_client_for_java_7-54b3b6db6214ece9638c5d24b108ecda3f4d67d4.jar" afterPath="$PROJECT_DIR$/app/build/pre-dexed/debug/hprose_client_for_java_7-54b3b6db6214ece9638c5d24b108ecda3f4d67d4.jar" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/pre-dexed/debug/support-v4-19.0.0-0833b290331067bf347e927815c0e47996af9a37.jar" afterPath="$PROJECT_DIR$/app/build/pre-dexed/debug/support-v4-19.0.0-0833b290331067bf347e927815c0e47996af9a37.jar" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/xyx/activity/AstroDetailsFragment.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/xyx/activity/AstroDetailsFragment.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/xyx/activity/AstroDetailsMonthFragment.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/xyx/activity/AstroDetailsMonthFragment.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/xyx/activity/AstroDetailsMoreFragment.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/xyx/activity/AstroDetailsMoreFragment.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/xyx/activity/AstroDetailsYearFragment.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/xyx/activity/AstroDetailsYearFragment.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/source/r/debug/com/xyx/R.java" afterPath="$PROJECT_DIR$/app/build/source/r/debug/com/xyx/R.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/xyx/util/Utils.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/xyx/util/Utils.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/XYX.iml" afterPath="$PROJECT_DIR$/XYX.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_astro_details.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_astro_details.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_astro_details_month.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_astro_details_month.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_astro_details_more.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_astro_details_more.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_astro_details_year.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_astro_details_year.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_astro_viewpager.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_astro_viewpager.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/app.iml" afterPath="$PROJECT_DIR$/app/app.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" afterPath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="XYX.iws" />
@@ -87,7 +69,7 @@
       <file leaf-file-name="AstroDetailsYearFragment.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/xyx/activity/AstroDetailsYearFragment.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="113" column="85" selection-start="5002" selection-end="5002" vertical-scroll-proportion="0.7137871" vertical-offset="1206" max-vertical-offset="2074">
+            <state line="128" column="50" selection-start="5624" selection-end="5624" vertical-scroll-proportion="0.95637" vertical-offset="1322" max-vertical-offset="2074">
               <folding />
             </state>
           </provider>
@@ -502,7 +484,7 @@
       <sortByType />
     </navigator>
     <panes>
-      <pane id="Scope" />
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -679,7 +661,7 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -731,6 +713,19 @@
       <option name="PORT" value="5005" />
       <method />
     </configuration>
+    <configuration default="true" type="Applet" factoryName="Applet">
+      <module name="" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="HTML_FILE_NAME" />
+      <option name="HTML_USED" value="false" />
+      <option name="WIDTH" value="400" />
+      <option name="HEIGHT" value="300" />
+      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
+      <option name="VM_PARAMETERS" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <method />
+    </configuration>
     <configuration default="true" type="TestNG" factoryName="TestNG">
       <module name="" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
@@ -756,19 +751,6 @@
       <envs />
       <properties />
       <listeners />
-      <method />
-    </configuration>
-    <configuration default="true" type="Applet" factoryName="Applet">
-      <module name="" />
-      <option name="MAIN_CLASS_NAME" />
-      <option name="HTML_FILE_NAME" />
-      <option name="HTML_USED" value="false" />
-      <option name="WIDTH" value="400" />
-      <option name="HEIGHT" value="300" />
-      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
-      <option name="VM_PARAMETERS" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
       <method />
     </configuration>
     <configuration default="true" type="Application" factoryName="Application">
@@ -881,7 +863,7 @@
       <window_info id="Build Variants" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
       <window_info id="Gradle Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32997763" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Android" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32997763" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Android" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32997763" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
@@ -911,6 +893,13 @@
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/xyx/activity/AstroDetailsYearFragment.java">
       <provider selected="true" editor-type-id="text-editor">
+        <state line="113" column="85" selection-start="5002" selection-end="5002" vertical-scroll-proportion="0.0" vertical-offset="1921" max-vertical-offset="2074">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/xyx/activity/AstroDetailsYearFragment.java">
+      <provider selected="true" editor-type-id="text-editor">
         <state line="120" column="69" selection-start="5363" selection-end="5363" vertical-scroll-proportion="0.0" vertical-offset="2040" max-vertical-offset="2074">
           <folding />
         </state>
@@ -925,7 +914,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/xyx/activity/AstroDetailsYearFragment.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="113" column="85" selection-start="5002" selection-end="5002" vertical-scroll-proportion="0.7137871" vertical-offset="1206" max-vertical-offset="2074">
+        <state line="128" column="50" selection-start="5624" selection-end="5624" vertical-scroll-proportion="0.95637" vertical-offset="1322" max-vertical-offset="2074">
           <folding />
         </state>
       </provider>
